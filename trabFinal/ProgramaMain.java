@@ -7,8 +7,8 @@ public class ProgramaMain {
 		Scanner entrada = new Scanner(System.in);
 		
 		//MENU DE ESCOLHA
-		System.out.println("\n=============== BIBLIOTECA DO(A) XXXXXXXXXX TESTE===============");
-		int op = 0;
+		System.out.println("\n=============== BIBLIOTECA DO(A) XXXXXXXXXX TESTE2===============");
+		char op = 0;
 		while (op != 9) {
 			//PRECISA SER REALIZADO UMA AUTENTICACAO DE USUARIO ANTES DE EXIBIR A TELA DE MENU
 			System.out.println("Informe o opcao desejada\n"
@@ -16,11 +16,12 @@ public class ProgramaMain {
 					+ "[2] Devolução de Livros\n"
 					+ "[3] Cadastrar novos Livros\n"
 					+ "[4] Cadastrar novos Usuários\n" //Aluno ou Funcionário
-					+ "[5] Relatórios\n" //Livros cadastrados; Empréstimos realizados; Funcionários cadastrados; Alunos cadastrados; Imprimir multa individual;
+					+ "[5] R"
+					+ ",elatórios\n" //Livros cadastrados; Empréstimos realizados; Funcionários cadastrados; Alunos cadastrados; Imprimir multa individual;
 					+ "[6] Funcao6");
-			op = 0;
-			op = entrada.nextInt();
-
+			
+			op = entrada.next().charAt(0);
+			
 			switch (op) {
 			case 1:
 				
@@ -31,10 +32,9 @@ public class ProgramaMain {
 			case 3:
 				
 				break;
-			case 4:
+			case '4':
 				CadastroAluno sys = new CadastroAluno();
 				sys.cadastroAluno();
-				sys.arquivarAluno();
 				break;
 			case 5:
 				
@@ -51,7 +51,6 @@ public class ProgramaMain {
 				break;
 			}
 		}
-		
 	}
 
 }

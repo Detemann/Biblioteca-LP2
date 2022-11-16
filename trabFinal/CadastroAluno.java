@@ -6,6 +6,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class CadastroAluno {
+	
 	Aluno aluno = new Aluno();
 	
 	public void cadastroAluno() {
@@ -26,7 +27,7 @@ public class CadastroAluno {
 		aluno.setData(dataHoje.toString());
 		
 		aluno.setMulta(0);
-		entrada.close();
+		arquivarAluno();
 	}
 	
 	public void arquivarAluno() {
