@@ -24,10 +24,10 @@ public class Professores {
 	public void setMatricula(int matricula) {
 		this.matricula = matricula;
 	}
-	public int getEndereco() {
+	public String getEndereco() {
 		return endereco;
 	}
-	public void setEndereco(int endereco) {
+	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 	public String getSetor() {

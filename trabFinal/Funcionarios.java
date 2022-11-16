@@ -31,10 +31,10 @@ public class Funcionarios {
 	public void setLogin(String login) {
 		this.login = login;
 	}
-	public int getEndereco() {
+	public String getEndereco() {
 		return endereco;
 	}
-	public void setEndereco(int endereco) {
+	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 	public String getSetor() {

@@ -31,10 +31,10 @@ public class Aluno {
 	public void setCurso(String curso) {
 		this.curso = curso;
 	}
-	public int getEndereco() {
+	public String getEndereco() {
 		return endereco;
 	}
-	public void setEndereco(int endereco) {
+	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 	public double getMulta() {
