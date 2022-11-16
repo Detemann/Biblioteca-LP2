@@ -7,7 +7,7 @@ public class ProgramaMain {
 		Scanner entrada = new Scanner(System.in);
 		
 		//MENU DE ESCOLHA
-		System.out.println("\n=============== BIBLIOTECA DO(A) XXXXXXXXXX ===============");
+		System.out.println("\n=============== BIBLIOTECA DO(A) XXXXXXXXXX TESTE===============");
 		int op = 0;
 		while (op != 9) {
 			//PRECISA SER REALIZADO UMA AUTENTICACAO DE USUARIO ANTES DE EXIBIR A TELA DE MENU
