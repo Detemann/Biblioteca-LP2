@@ -2,10 +2,10 @@ package trabFinal;
 import java.util.*;
 
 public class ProgramaMain {
-	static Scanner entrada = new Scanner(System.in);
 
 	public static void main(String[] args) {
-
+		Scanner entrada = new Scanner(System.in);
+		
 		//MENU DE ESCOLHA
 		System.out.println("\n=============== BIBLIOTECA DO(A) XXXXXXXXXX ===============");
 		int op = 0;
@@ -18,7 +18,7 @@ public class ProgramaMain {
 					+ "[4] Cadastrar novos Usuários\n" //Aluno ou Funcionário
 					+ "[5] Relatórios\n" //Livros cadastrados; Empréstimos realizados; Funcionários cadastrados; Alunos cadastrados; Imprimir multa individual;
 					+ "[6] Funcao6");
-			
+			op = 0;
 			op = entrada.nextInt();
 
 			switch (op) {
@@ -32,7 +32,9 @@ public class ProgramaMain {
 				
 				break;
 			case 4:
-				
+				CadastroAluno sys = new CadastroAluno();
+				sys.cadastroAluno();
+				sys.arquivarAluno();
 				break;
 			case 5:
 				
@@ -42,6 +44,7 @@ public class ProgramaMain {
 				break;
 			case 9:
 				System.out.println("Fim de programa!");
+				entrada.close();
 				break;
 			default:
 				System.out.println("A opcao informada é inválida!");

@@ -1,11 +1,11 @@
 package trabFinal;
 
 public class Professores {
-	private String data;	
-	private String nome;
 	private int matricula;
+	private String nome;
 	private String endereco;
-	private String setor ;
+	private String data;
+	private String setor;
 	public String getData() {
 		return data;
 	}
@@ -36,6 +36,5 @@ public class Professores {
 	public void setSetor(String setor) {
 		this.setor = setor;
 	}
-	
 	
 }
