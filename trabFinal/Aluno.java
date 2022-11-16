@@ -5,7 +5,7 @@ public class Aluno {
 	private String nome;
 	private int matricula;
 	private String curso;
-	private int endereco;
+	private String endereco;
 	private double multa;
 	public String getData() {
 		return data;

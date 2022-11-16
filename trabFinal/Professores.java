@@ -4,7 +4,7 @@ public class Professores {
 	private String data;	
 	private String nome;
 	private int matricula;
-	private int endereco;
+	private String endereco;
 	private String setor ;
 	public String getData() {
 		return data;

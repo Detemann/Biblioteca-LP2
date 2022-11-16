@@ -5,7 +5,7 @@ public class Funcionarios {
 	private String nome;
 	private int matricula;
 	private String login;
-	private int endereco;
+	private String endereco;
 	private String setor ;
 	public String getData() {
 		return data;
