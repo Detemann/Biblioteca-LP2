@@ -1,8 +1,6 @@
 package trabFinal;
 
-import java.io.RandomAccessFile;
-import java.time.LocalDate;
-import java.util.Random;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class CadastroAluno {
@@ -12,7 +10,6 @@ public class CadastroAluno {
 	public void cadastroAluno() {
 		Scanner ler = new Scanner(System.in).useDelimiter("\n");
 		String entrada, linha="";
-		Random ran = new Random();
 		
 		System.out.printf("Informe a matrículaa do aluno:\n");
 		entrada = ler.nextLine();
@@ -44,11 +41,10 @@ public class CadastroAluno {
 	
 	public void arquivarAluno(String linha) {
 		try {
-			RandomAccessFile arquivo = new RandomAccessFile("csv\\ALUNOS.csv", "rw");
-			
-			arquivo.seek(arquivo.length());
-			arquivo.writeChars(linha);
-			arquivo.close();
+			FileWriter escritor = new FileWriter("csv\\ALUNOS.csv", true);
+			escritor.write(System.lineSeparator());
+			escritor.write(linha);
+			escritor.close();
 		} catch (Exception e) {
 			System.out.println("Ocorreu um erro.");
 		}
