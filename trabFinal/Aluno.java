@@ -1,11 +1,11 @@
 package trabFinal;
 
 public class Aluno {
-	private String data;	
+	private int matricula;	
 	private String nome;
-	private int matricula;
-	private String curso;
 	private String endereco;
+	private String curso;
+	private String data;
 	private double multa;
 	public String getData() {
 		return data;
@@ -43,5 +43,7 @@ public class Aluno {
 	public void setMulta(double multa) {
 		this.multa = multa;
 	}
-	
+	public String toString() {
+		return matricula+";"+nome+";"+endereco+";"+curso+";"+data+";"+multa;
+	}
 }

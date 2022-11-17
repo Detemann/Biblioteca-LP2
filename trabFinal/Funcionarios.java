@@ -1,12 +1,15 @@
 package trabFinal;
 
 public class Funcionarios {
-	private String data;	
-	private String nome;
 	private int matricula;
-	private String login;
+	private String nome;
 	private String endereco;
-	private String setor ;
+	private String data;
+	private String tipo;
+	private String setor;
+	private String senha;
+	private String login;
+	
 	public String getData() {
 		return data;
 	}
@@ -42,6 +45,18 @@ public class Funcionarios {
 	}
 	public void setSetor(String setor) {
 		this.setor = setor;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 	
 }
