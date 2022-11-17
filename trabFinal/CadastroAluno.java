@@ -10,32 +10,44 @@ public class CadastroAluno {
 	Aluno aluno = new Aluno();
 	
 	public void cadastroAluno() {
-		Scanner entrada = new Scanner(System.in).useDelimiter("\n");
+		Scanner ler = new Scanner(System.in).useDelimiter("\n");
+		String entrada, linha="";
 		Random ran = new Random();
 		
-		aluno.setMatricula(ran.nextInt(9999));
-		System.out.println("Nome: ");
-		aluno.setNome(entrada.next());
+		System.out.printf("Informe a matrícula do aluno:\n");
+		entrada = ler.nextLine();
+		linha += entrada+";";
+		aluno.setMatricula(Integer.parseInt(entrada));
 		
-		System.out.println("Digite o endereço: ");
-		aluno.setEndereco(entrada.next());
+		System.out.printf("Informe o nome do aluno:\n");
+		entrada = ler.nextLine();
+		linha += entrada+";";
+		aluno.setNome(entrada);
 		
-		System.out.println("Digite o curso: ");
-		aluno.setCurso(entrada.next());
+		System.out.printf("Informe o endereço do aluno:\n");
+		entrada = ler.nextLine();
+		linha += entrada+";";
+		aluno.setEndereco(entrada);
 		
-		LocalDate dataHoje = LocalDate.now();
-		aluno.setData(dataHoje.toString());
+		System.out.printf("Informe curso do aluno:\n");
+		entrada = ler.nextLine();
+		linha += entrada+";";
+		aluno.setCurso(entrada);
 		
-		aluno.setMulta(0);
-		arquivarAluno();
+		System.out.printf("\nInforme a data de ingresso do aluno: ");
+		entrada = ler.nextLine();
+		linha += entrada+";";
+		aluno.setData(entrada);
+
+		arquivarAluno(linha);
 	}
 	
-	public void arquivarAluno() {
+	public void arquivarAluno(String linha) {
 		try {
 			RandomAccessFile arquivo = new RandomAccessFile("csv\\ALUNOS.csv", "rw");
 			
 			arquivo.seek(arquivo.length());
-			arquivo.writeChars(aluno.toString());
+			arquivo.writeChars(linha);
 			arquivo.close();
 		} catch (Exception e) {
 			System.out.println("Ocorreu um erro.");
