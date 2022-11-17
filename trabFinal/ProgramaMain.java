@@ -31,8 +31,8 @@ public class ProgramaMain {
 				
 				break;
 			case 4:
-				CadastroProfessor novo = new CadastroProfessor();
-				novo.cadastroProfessor();				
+				CadastraFuncionarios novo = new CadastraFuncionarios();
+				novo.cadastroFuncionario();				
 				break;
 			case 5:
 				

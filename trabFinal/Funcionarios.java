@@ -5,7 +5,6 @@ public class Funcionarios {
 	private String nome;
 	private String endereco;
 	private String data;
-	private String tipo;
 	private String setor;
 	private String senha;
 	private String login;
@@ -46,17 +45,15 @@ public class Funcionarios {
 	public void setSetor(String setor) {
 		this.setor = setor;
 	}
-	public String getTipo() {
-		return tipo;
-	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
+	
 	public String getSenha() {
 		return senha;
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
+	public String toString() {
+		return matricula+";"+nome+";"+endereco+";"+setor+
+				";"+data+";"+ login+ ";" + senha;
+	}
 }
