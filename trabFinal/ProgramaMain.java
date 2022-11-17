@@ -2,7 +2,7 @@ package trabFinal;
 import java.util.*;
 
 public class ProgramaMain {
-	static Scanner entrada = new Scanner(System.in);
+	public static final Scanner entrada = new Scanner(System.in);
 
 	public static void main(String[] args) {		
 		//MENU DE ADM
@@ -15,7 +15,7 @@ public class ProgramaMain {
 					+ "[2] Devolução de Livros\n"
 					+ "[3] Cadastrar novos Livros\n"
 					+ "[4] Cadastrar novos Usuários\n" //Aluno ou Funcionário
-					+ "[5] Relat�rio Geral\n" //Livros cadastrados; Empréstimos realizados; Funcionários cadastrados; Alunos cadastrados; Imprimir multa individual;
+					+ "[5] Relatório Geral\n" //Livros cadastrados; Empréstimos realizados; Funcionários cadastrados; Alunos cadastrados; Imprimir multa individual;
 					+ "[6] Funcao6");
 			
 			op = entrada.nextInt();

@@ -1,35 +1,32 @@
 package trabFinal;
 import java.io.FileOutputStream;
-//import java.io.FileWriter;
 import java.io.OutputStreamWriter;
-import java.util.Scanner;
 
 public class CadastraFuncionarios {
 Funcionarios funcionario = new Funcionarios();
 	
 	public void cadastroFuncionario() {
-		Scanner ler = new Scanner(System.in).useDelimiter("\n");
 		
-		System.out.printf("Informe a matrícula do funcionario: ");
-		funcionario.setMatricula(Integer.parseInt(ler.nextLine()));
+		System.out.printf("Informe a matrï¿½cula do funcionario: ");
+		funcionario.setMatricula(Integer.parseInt(ProgramaMain.entrada.nextLine()));
 		
 		System.out.printf("Informe o nome do funcionario: ");
-		funcionario.setNome(ler.nextLine());
+		funcionario.setNome(ProgramaMain.entrada.nextLine());
 		
-		System.out.printf("Informe o endereço do funcionario: ");
-		funcionario.setEndereco(ler.nextLine());
+		System.out.printf("Informe o endereï¿½o do funcionario: ");
+		funcionario.setEndereco(ProgramaMain.entrada.nextLine());
 		
 		System.out.printf("Informe o setor do funcionario: ");
-		funcionario.setSetor(ler.nextLine());
+		funcionario.setSetor(ProgramaMain.entrada.nextLine());
 		
 		System.out.printf("Informe a data de ingresso do funcionario: ");
-		funcionario.setData(ler.nextLine());
+		funcionario.setData(ProgramaMain.entrada.nextLine());
 		
 		System.out.printf("Informe o login do funcionario: ");
-		funcionario.setLogin(ler.nextLine());
+		funcionario.setLogin(ProgramaMain.entrada.nextLine());
 		
 		System.out.printf("Informe a senha do usuario:  ");
-		funcionario.setSenha(ler.nextLine());
+		funcionario.setSenha(ProgramaMain.entrada.nextLine());
 
 		arquivarfuncionario();
 	}
