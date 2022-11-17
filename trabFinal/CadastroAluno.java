@@ -9,45 +9,32 @@ public class CadastroAluno {
 	
 	public void cadastroAluno() {
 		Scanner ler = new Scanner(System.in).useDelimiter("\n");
-		String entrada, linha="";
 		
 		System.out.printf("Informe a matrículaa do aluno: ");
-		entrada = ler.nextLine();
-		linha += entrada+";";
-		aluno.setMatricula(Integer.parseInt(entrada));
+		aluno.setMatricula(Integer.parseInt(ler.nextLine()));
 		
 		System.out.printf("Informe o nome do aluno: ");
-		entrada = ler.nextLine();
-		linha += entrada+";";
-		aluno.setNome(entrada);
+		aluno.setNome(ler.nextLine());
 		
 		System.out.printf("Informe o endereço do aluno: ");
-		entrada = ler.nextLine();
-		linha += entrada+";";
-		aluno.setEndereco(entrada);
+		aluno.setEndereco(ler.nextLine());
 		
 		System.out.printf("Informe curso do aluno: ");
-		entrada = ler.nextLine();
-		linha += entrada+";";
-		aluno.setCurso(entrada);
+		aluno.setCurso(ler.nextLine());
 		
 		System.out.printf("Informe a data de ingresso do aluno: ");
-		entrada = ler.nextLine();
-		linha += entrada+";";
-		aluno.setData(entrada);
+		aluno.setData(ler.nextLine());
 
-		entrada = "0";
-		linha += entrada;
-		aluno.setMulta(Double.parseDouble(entrada));
+		aluno.setMulta(0);
 
-		arquivarAluno(linha);
+		arquivarAluno();
 	}
 	
-	public void arquivarAluno(String linha) {
+	public void arquivarAluno() {
 		try {
 			FileWriter escritor = new FileWriter("csv\\ALUNOS.csv", true);
 			escritor.write(System.lineSeparator());
-			escritor.write(linha);
+			escritor.write(aluno.toString());
 			escritor.close();
 		} catch (Exception e) {
 			System.out.println("Ocorreu um erro.");

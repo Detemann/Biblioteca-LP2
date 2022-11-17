@@ -44,6 +44,6 @@ public class Aluno {
 		this.multa = multa;
 	}
 	public String toString() {
-		return matricula+";"+nome+";"+endereco+";"+curso+";"+data+";"+multa+";";
+		return matricula+";"+nome+";"+endereco+";"+curso+";"+data+";"+multa;
 	}
 }
