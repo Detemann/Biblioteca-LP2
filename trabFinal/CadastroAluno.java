@@ -1,6 +1,8 @@
 package trabFinal;
 
-import java.io.FileWriter;
+import java.io.FileOutputStream;
+//import java.io.FileWriter;
+import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
 public class CadastroAluno {
@@ -32,7 +34,7 @@ public class CadastroAluno {
 	
 	public void arquivarAluno() {
 		try {
-			FileWriter escritor = new FileWriter("csv\\ALUNOS.csv", true);
+			OutputStreamWriter escritor = new OutputStreamWriter(new FileOutputStream("csv\\ALUNOS.csv", true), "UTF-8");
 			escritor.write(System.lineSeparator());
 			escritor.write(aluno.toString());
 			escritor.close();
