@@ -1,7 +1,7 @@
 matrIcula;nome;endereco;data-ingresso;tipo;setor;senha;login
-8895;Rafael Renato Duarte;27020085;12/12/2018;biblioteca;1234;rafael.renato
-4725;Lucas Dalapicola Tayar Gonçalves;28627312;11/12/2017;TI;0000;admin
-6176;Thomas Manoel Carvalho;28535204;29/07/2020;biblioteca;1234;thomas.manoel
-33333;Ribamar;Av.Biruleibe;TI;12/10/2018;Ribamar@reidelas.com;123456
-2122;Malcon;Av.Rogerio Vieira;Trabalhador;30/09/1990;Malcontato@gmail.com;212223
-4455;Romulo;Rua Berimbau;TI;22/30/2005;RomuloAbreu@gmail.com;firulinhaKaKa
+8895;Rafael Renato Duarte;Rua Laury Tavares 1, 29, Santa Martha, Vitória-ES;12/12/2018;biblioteca;1234;rafael.renato
+4725;Lucas Dalapicola Tayar Gonçalves;Escadaria Diocleciano Pinto da Rocha, 44, Jesus de Nazareth, Vitória-ES;11/12/2017;TI;0000;admin
+6176;Thomas Manoel Carvalho;Praça Costa Pereira, 52, Centro, Vitória-ES;29/07/2020;biblioteca;1234;thomas.manoel
+33333;Ribamar;Rua Pastor Daniel Felipe, 77, Redenção, Vitória-ES;TI;12/10/2018;Ribamar@reidelas.com;123456
+2122;Malcon;Parque Moscoso, 3, Centro, Vitória-ES;Trabalhador;30/09/1990;Malcontato@gmail.com;212223
+4455;Romulo;Escadaria Jacy Oliveira Giuseppe, 7, Caratoíra, Vitória-ES;TI;22/30/2005;RomuloAbreu@gmail.com;firulinhaKaKa
