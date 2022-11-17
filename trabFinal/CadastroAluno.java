@@ -14,7 +14,7 @@ public class CadastroAluno {
 		String entrada, linha="";
 		Random ran = new Random();
 		
-		System.out.printf("Informe a matrícula do aluno:\n");
+		System.out.printf("Informe a matrículaa do aluno:\n");
 		entrada = ler.nextLine();
 		linha += entrada+";";
 		aluno.setMatricula(Integer.parseInt(entrada));
