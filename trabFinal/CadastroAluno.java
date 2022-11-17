@@ -11,30 +11,34 @@ public class CadastroAluno {
 		Scanner ler = new Scanner(System.in).useDelimiter("\n");
 		String entrada, linha="";
 		
-		System.out.printf("Informe a matrículaa do aluno:\n");
+		System.out.printf("Informe a matrículaa do aluno: ");
 		entrada = ler.nextLine();
 		linha += entrada+";";
 		aluno.setMatricula(Integer.parseInt(entrada));
 		
-		System.out.printf("Informe o nome do aluno:\n");
+		System.out.printf("Informe o nome do aluno: ");
 		entrada = ler.nextLine();
 		linha += entrada+";";
 		aluno.setNome(entrada);
 		
-		System.out.printf("Informe o endereço do aluno:\n");
+		System.out.printf("Informe o endereço do aluno: ");
 		entrada = ler.nextLine();
 		linha += entrada+";";
 		aluno.setEndereco(entrada);
 		
-		System.out.printf("Informe curso do aluno:\n");
+		System.out.printf("Informe curso do aluno: ");
 		entrada = ler.nextLine();
 		linha += entrada+";";
 		aluno.setCurso(entrada);
 		
-		System.out.printf("\nInforme a data de ingresso do aluno: ");
+		System.out.printf("Informe a data de ingresso do aluno: ");
 		entrada = ler.nextLine();
 		linha += entrada+";";
 		aluno.setData(entrada);
+
+		entrada = "0";
+		linha += entrada;
+		aluno.setMulta(Double.parseDouble(entrada));
 
 		arquivarAluno(linha);
 	}
