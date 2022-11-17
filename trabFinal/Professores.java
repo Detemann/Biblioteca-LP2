@@ -6,6 +6,7 @@ public class Professores {
 	private String endereco;
 	private String data;
 	private String setor;
+	
 	public String getData() {
 		return data;
 	}
@@ -35,6 +36,9 @@ public class Professores {
 	}
 	public void setSetor(String setor) {
 		this.setor = setor;
+	}
+	public String toString() {
+		return matricula+";"+nome+";"+endereco+";"+setor+";"+data;
 	}
 	
 }

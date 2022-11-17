@@ -4,8 +4,7 @@ import java.util.*;
 public class ProgramaMain {
 	static Scanner entrada = new Scanner(System.in);
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {		
 		//MENU DE ADM
 		System.out.println("\n=============== BIBLIOTECA DO(A) XXXXXXXXXX ===============");
 		int op = 0;
@@ -32,7 +31,8 @@ public class ProgramaMain {
 				
 				break;
 			case 4:
-				
+				CadastroProfessor novo = new CadastroProfessor();
+				novo.cadastroProfessor();				
 				break;
 			case 5:
 				
