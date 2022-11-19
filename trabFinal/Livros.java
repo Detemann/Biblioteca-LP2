@@ -7,6 +7,7 @@ public class Livros {
 	private int anoDePubli;
 	private String editora;
 	private char tipo;
+	private int issn;
 	public String getTitulo() {
 		return titulo;
 	}
@@ -42,5 +43,14 @@ public class Livros {
 	}
 	public void setTipo(char tipo) {
 		this.tipo = tipo;
+	}
+	public int getIssn() {
+		return issn;
+	}
+	public void setIssn(int issn) {
+		this.issn = issn;
+	}
+	public String toString() {
+		return codigo+";"+autores+";"+titulo+";"+editora+";"+tipo+";"+anoDePubli+";"+issn;
 	}
 }

@@ -4,9 +4,9 @@ public class Periodicos {
 	private int codigo;	
 	private String autores;	
 	private String titulo;
-	private char  issn;
+	private int  issn;
 	private char tipo;
-	private int fatorDeImpacto;
+	private double fatorDeImpacto;
 	
 	public int getCodigo() {
 		return codigo;
@@ -26,10 +26,10 @@ public class Periodicos {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public char getIssn() {
+	public int getIssn() {
 		return issn;
 	}
-	public void setIssn(char issn) {
+	public void setIssn(int issn) {
 		this.issn = issn;
 	}
 	public char getTipo() {
@@ -38,12 +38,14 @@ public class Periodicos {
 	public void setTipo(char tipo) {
 		this.tipo = tipo;
 	}
-	public int getFatorDeImpacto() {
+	public double getFatorDeImpacto() {
 		return fatorDeImpacto;
 	}
-	public void setFatorDeImpacto(int fatorDeImpacto) {
+	public void setFatorDeImpacto(double fatorDeImpacto) {
 		this.fatorDeImpacto = fatorDeImpacto;
 	}
-	
+	public String toString() {
+		return codigo+";"+autores+";"+titulo+";"+tipo+";"+fatorDeImpacto+";"+issn;
+	}
 	
 }	

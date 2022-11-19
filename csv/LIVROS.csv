@@ -1,17 +1,17 @@
-codigo;autor(es);titulo;editora;tipo;ano-de-publicação;ISSN
-32133213;Napoleon Hill;Quem pensa enriquece - O Legado;CDG Edições e Publicações Eireli;Autoajuda;2018;78033300
-12311231;Marco Túlio;Box trilogia AUTHENTICGAMES;Astral Cultural Editora Ltda;InfantoJuvenil;2019;20433639
-65466546;H.P. Lovecraft;Box HP Lovecraft;Pandorga Editora e Produtora LTDA;Estrangeira;2019;91839024
-45644564;Editora Saraiva;Vade Mecum Saraiva - Tradicional - 34ª edição 2022;Saraiva Educação S. A.;Educação;2022;82186385
-78977897;Charlie Donlea;A Garota do Lago;Faro Editorial Eireli;Suspence;2017;19394942
-98799879;Itamar Vieira Junior;Torto Arado;Editora Todavia;Nacional;2019;59508546
-87418741;Marvin Karlins;Manual de persuasão do FBI;Universo dos Livros Editora LTDA;Autoajuda;2015;71187649
-14781478;Robert Greene;As 48 Leis do Poder;Editora Rocco Ltda;Artes;2021;98118372
-21472147;Daniel Ziblatt;Como as Democracias Morrem;Editora Schwarcz SA;Sociais;2018;15080393
-32143214;John Bunyan;O Peregrino;Instituto Brasileiro de Cultura Ltda;Sociais;2022;23934239
-89898989;Fernando Morais;Lula, volume 1;Editora Schwarcz SA;Nacional;2021;49531869
-98569856;Jenna Evans Welch;Box Amor & Livros;Editora Intrínseca Ltda.;InfantoJuvenil;2021;97326455
-41524152;Thiago Nigro;Do mil ao milhão;Casa dos Livros Editora Ltda;Administração;2018;65772933
-78217821;Napoleon Hill;Mais esperto que o Diabo;CDG Edições e Publicações Eireli;Autoajuda;2014;16897619
-10201020;Hal Elrod;O Milagre da Manhã;Editora Best Seller Ltda;Autoajuda;2016;92290726
-45104510;Kazuo Ishiguro;Não me abandone jamais;COMPANHIA DAS LETRAS;Estrangeira;2017;24793653
+codigo;autor(es);titulo;editora;tipo;ano-de-publicação;ISSN;
+32133213;Napoleon Hill;Quem pensa enriquece - O Legado;CDG Edições e Publicações Eireli;l;2018;78033300;
+12311231;Marco Túlio;Box trilogia AUTHENTICGAMES;Astral Cultural Editora Ltda;l;2019;20433639;
+65466546;H.P. Lovecraft;Box HP Lovecraft;Pandorga Editora e Produtora LTDA;l;2019;91839024;
+45644564;Editora Saraiva;Vade Mecum Saraiva - Tradicional - 34ª edição 2022;Saraiva Educação S. A.;l;2022;82186385;
+78977897;Charlie Donlea;A Garota do Lago;Faro Editorial Eireli;l;2017;19394942;
+98799879;Itamar Vieira Junior;Torto Arado;Editora Todavia;l;2019;59508546;
+87418741;Marvin Karlins;Manual de persuasão do FBI;Universo dos Livros Editora LTDA;l;2015;71187649;
+14781478;Robert Greene;As 48 Leis do Poder;Editora Rocco Ltda;l;2021;98118372;
+21472147;Daniel Ziblatt;Como as Democracias Morrem;Editora Schwarcz SA;l;2018;15080393;
+32143214;John Bunyan;O Peregrino;Instituto Brasileiro de Cultura Ltda;l;2022;23934239;
+89898989;Fernando Morais;Lula, volume 1;Editora Schwarcz SA;l;2021;49531869;
+98569856;Jenna Evans Welch;Box Amor & Livros;Editora Intrínseca Ltda.;l;2021;97326455;
+41524152;Thiago Nigro;Do mil ao milhão;Casa dos Livros Editora Ltda;l;2018;65772933;
+78217821;Napoleon Hill;Mais esperto que o Diabo;CDG Edições e Publicações Eireli;l;2014;16897619;
+10201020;Hal Elrod;O Milagre da Manhã;Editora Best Seller Ltda;l;2016;92290726;
+45104510;Kazuo Ishiguro;Não me abandone jamais;COMPANHIA DAS LETRAS;l;2017;24793653;
