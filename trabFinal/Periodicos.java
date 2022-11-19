@@ -7,7 +7,7 @@ public class Periodicos {
 	private int  issn;
 	private char tipo;
 	private double fatorDeImpacto;
-	
+	private boolean disponivel;
 	public int getCodigo() {
 		return codigo;
 	}
@@ -44,8 +44,14 @@ public class Periodicos {
 	public void setFatorDeImpacto(double fatorDeImpacto) {
 		this.fatorDeImpacto = fatorDeImpacto;
 	}
+	public boolean isDisponivel() {
+		return disponivel;
+	}
+	public void setDisponivel(boolean disponivel) {
+		this.disponivel = disponivel;
+	}
 	public String toString() {
-		return codigo+";"+autores+";"+titulo+";"+tipo+";"+fatorDeImpacto+";"+issn;
+		return codigo+";"+autores+";"+titulo+";"+tipo+";"+fatorDeImpacto+";"+issn+";"+disponivel;
 	}
 	
 }	
