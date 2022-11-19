@@ -1,5 +1,7 @@
-package trabFinal;
+package geral;
 import java.util.*;
+
+import cadastros.CadastraFuncionarios;
 
 public class ProgramaMain {
 	public static final Scanner entrada = new Scanner(System.in);
@@ -22,7 +24,8 @@ public class ProgramaMain {
 
 			switch (op) {
 			case 1:
-				
+				FazerEmprestimo novoEmp = new FazerEmprestimo(); //Coloquei aqui para testes
+				novoEmp.emprestimo();
 				break;
 			case 2:
 				
@@ -31,8 +34,8 @@ public class ProgramaMain {
 				
 				break;
 			case 4:
-				CadastraFuncionarios novo = new CadastraFuncionarios();
-				novo.cadastroFuncionario();				
+				CadastraFuncionarios novoFunc = new CadastraFuncionarios();
+				novoFunc.cadastroFuncionario();			
 				break;
 			case 5:
 				

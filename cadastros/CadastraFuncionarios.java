@@ -1,6 +1,9 @@
-package trabFinal;
+package cadastros;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
+
+import geral.ProgramaMain;
+import pessoasLivros.Funcionarios;
 
 public class CadastraFuncionarios {
 Funcionarios funcionario = new Funcionarios();

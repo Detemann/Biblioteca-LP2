@@ -1,8 +1,11 @@
-package trabFinal;
+package cadastros;
 
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.util.Random;
+
+import geral.ProgramaMain;
+import pessoasLivros.Periodicos;
 
 public class CadastraPeriodicos {
 	Periodicos periodico = new Periodicos();

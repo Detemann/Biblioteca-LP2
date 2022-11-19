@@ -1,4 +1,4 @@
-package trabFinal;
+package geral;
 
 public class PlanilhaDeEmprestimos {
 	private int codigo;

@@ -1,4 +1,4 @@
-package trabFinal;
+package pessoasLivros;
 
 public class Funcionarios {
 	private int matricula;

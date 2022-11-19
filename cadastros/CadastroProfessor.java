@@ -1,6 +1,9 @@
-package trabFinal;
+package cadastros;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
+
+import geral.ProgramaMain;
+import pessoasLivros.Professores;
 
 public class CadastroProfessor {
 	Professores professor = new Professores();
