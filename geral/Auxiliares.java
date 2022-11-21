@@ -7,33 +7,60 @@ import java.io.FileReader;
 public class Auxiliares {
 
 	@SuppressWarnings("resource")
-	public int buscaMatricula(String matricula) {
-		try {
-			BufferedReader leitor = new BufferedReader(new FileReader("csv\\ALUNOS.csv")); //É um leitor de arquivo
-			do {
-				String linha = leitor.readLine();
-				String[] usuario = linha.split(";");
-				if (usuario[0].equals(matricula)) {
+	public Integer buscaMatricula(String matricula) {
+
+		if (matricula.equals("0") != true) {
+			System.out.print("A matricula é de um aluno, professor ou funcionário?\n[1]Professor\n[2]Aluno\n[3]Funcionário\nDigite a opção: ");
+					
+			try {
+				BufferedReader leitor = new BufferedReader(new FileReader("csv\\PROFESSORES.csv")); // É um leitor de
+																									// arquivo
+				String linha;
+				switch (ProgramaMain.entrada.nextInt()) {
+				case 1:
+					while ((linha = leitor.readLine()) != null) {
+						String[] usuario = linha.split(";");
+						if (usuario[0].equals(matricula)) {
+							leitor.close();
+							return Integer.parseInt(usuario[0]);
+						}
+					}
 					leitor.close();
-					return Integer.parseInt(usuario[0]);
-				}
-			} while (leitor.readLine() != null);
-			
-			leitor = new BufferedReader(new FileReader("csv\\PROFESSORES.csv"));
-			do {
-				String linha = leitor.readLine();
-				String[] usuario = linha.split(";");
-				if (usuario[0].equals(matricula)) {
+					break;
+				case 2:
+					leitor = new BufferedReader(new FileReader("csv\\ALUNOS.csv"));
+					while ((linha = leitor.readLine()) != null) {
+						String[] usuario = linha.split(";");
+						if (usuario[0].equals(matricula)) {
+							leitor.close();
+							return Integer.parseInt(usuario[0]);
+						}
+					}
 					leitor.close();
-					return Integer.parseInt(usuario[0]);
+					break;
+				case 3:
+					leitor = new BufferedReader(new FileReader("csv\\FUNCIONARIOS.csv"));
+					while ((linha = leitor.readLine()) != null) {
+						String[] usuario = linha.split(";");
+						if (usuario[0].equals(matricula)) {
+							leitor.close();
+							return Integer.parseInt(usuario[0]);
+						}
+					}
+					leitor.close();
+					break;
+				default:
+					System.out.println("Opção invalida!\n");
+					buscaMatricula(matricula);
+					break;
 				}
-			} while (leitor.readLine()!=null);
-			leitor.close();
-			
-		} catch (Exception e) {
-			System.out.println("Ocorreu um erro.");
+			} catch (Exception e) {
+				System.out.println("Ocorreu um erro.");
+				return null;
+			}
+		} else
 			return 0;
-		}
-		return 0;
+
+		return null;
 	}
 }
