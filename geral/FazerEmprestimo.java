@@ -13,8 +13,8 @@ public class FazerEmprestimo {
 	public void emprestimo() {
 		//Gera um código aleatório para o emprestimo
 		System.out.println("Para cancelar o processo digite 0 em qualquer um dos campos de digitação.");
-		Random codigo = new Random();
-		emprestimo.setCodigo(codigo.nextInt(10000000, 99999999));
+		Random codigoEmprestimo = new Random();
+		emprestimo.setCodigo(codigoEmprestimo.nextInt(10000000, 99999999));
 		item.setCodigoEmprestimo(emprestimo.getCodigo());
 		
 		//Busca e associa a matricula de professores ou alunos ao empréstimo; metodo auxi.buscaMatricula está na classe de Auxiliares.
@@ -81,6 +81,22 @@ public class FazerEmprestimo {
 			}
 		}
 		
-		
+		while(true) {
+			System.out.println("[1]Livro\n[2]Periódico");
+			switch (ProgramaMain.entrada.nextInt()) {
+			case 1:
+				System.out.println("Escreva o código do livro: ");
+				String codigoLivro = ProgramaMain.entrada.next();
+				item.setCodigoLivro(auxi.buscaArcevo(codigoLivro));
+				break;
+			case 2:
+				System.out.println("Escreva o código do periódico: ");
+				String codigoPeriodico = ProgramaMain.entrada.next();
+				item.setCodigoPeriodico(auxi.buscaArcevo(codigoPeriodico));
+				break;
+			default:
+				break;
+			}
+		}
 	}
 }

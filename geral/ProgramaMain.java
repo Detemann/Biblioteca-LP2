@@ -29,6 +29,7 @@ public class ProgramaMain {
 						menuPrincipal();
 					}
 				}
+				System.out.println("Matrícula ou senha inválido");
 			}
 		} catch (Exception e) {
 			System.out.println("Ocorreu um erro.");

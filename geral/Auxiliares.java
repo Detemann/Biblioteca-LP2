@@ -6,7 +6,6 @@ import java.io.FileReader;
 // Essa classe contém metodos de busca e outras coisas
 public class Auxiliares {
 
-	@SuppressWarnings("resource")
 	public Integer buscaMatricula(String matricula) {
 
 		if (matricula.equals("0") != true) {
@@ -67,11 +66,11 @@ public class Auxiliares {
 		return null;
 	}
 
-	public Integer buscaLivro(String codigoLivro) {
+	public Integer buscaArcevo(String codigoLivro) {
 		
 		if (codigoLivro.equals("0") != true) {
 			System.out.print(
-					"O, professor ou funcionário?\n[1]Livros\n[2]Periódicos\nDigite a opção: ");
+					"O item é um livro ou um periódico?\n[1]Livros\n[2]Periódicos\nDigite a opção: ");
 
 			try {
 				BufferedReader leitor = new BufferedReader(new FileReader("csv\\LIVROS.csv"));
@@ -79,10 +78,10 @@ public class Auxiliares {
 				switch (ProgramaMain.entrada.nextInt()) {
 				case 1:
 					while ((linha = leitor.readLine()) != null) {
-						String[] usuario = linha.split(";");
-						if (usuario[0].equals(codigoLivro)) {
+						String[] livro = linha.split(";");
+						if (livro[0].equals(codigoLivro)) {
 							leitor.close();
-							return Integer.parseInt(usuario[0]);
+							return Integer.parseInt(livro[0]);
 						}
 					}
 					leitor.close();
@@ -91,10 +90,10 @@ public class Auxiliares {
 					leitor.close();
 					leitor = new BufferedReader(new FileReader("csv\\PERIODICOS.csv"));
 					while ((linha = leitor.readLine()) != null) {
-						String[] usuario = linha.split(";");
-						if (usuario[0].equals(codigoLivro)) {
+						String[] periodico = linha.split(";");
+						if (periodico[0].equals(codigoLivro)) {
 							leitor.close();
-							return Integer.parseInt(usuario[0]);
+							return Integer.parseInt(periodico[0]);
 						}
 					}
 					leitor.close();
