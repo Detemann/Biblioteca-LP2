@@ -18,12 +18,12 @@ public class ProgramaMain {
 		try (BufferedReader leitor = new BufferedReader(new FileReader("csv\\FUNCIONARIOS.csv"))) {
 			linha = leitor.readLine();
 			while (true) {
-				String[] funcionario = linha.split(";");
 				System.out.println("Digite a matricula do funcionario: ");
 				matricula = entrada.next();
 				System.out.println("Digite a senha: ");
 				senha = entrada.next();
 				while ((linha = leitor.readLine()) != null) {
+					String[] funcionario = linha.split(";");
 					if (funcionario[0].equals(matricula) && funcionario[5].equals(senha)) {
 						leitor.close();
 						menuPrincipal();
