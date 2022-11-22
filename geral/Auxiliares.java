@@ -61,8 +61,8 @@ public class Auxiliares {
 				System.out.println("Ocorreu um erro.");
 				return null;
 			}
-		} else
-			return 0;
+		} else return 0;
+			
 
 		return null;
 	}
@@ -71,7 +71,7 @@ public class Auxiliares {
 		
 		if (codigoLivro.equals("0") != true) {
 			System.out.print(
-					"A matricula é de um aluno, professor ou funcionário?\n[1]Professor\n[2]Aluno\n[3]Funcionário\nDigite a opção: ");
+					"O, professor ou funcionário?\n[1]Livros\n[2]Periódicos\nDigite a opção: ");
 
 			try {
 				BufferedReader leitor = new BufferedReader(new FileReader("csv\\LIVROS.csv"));

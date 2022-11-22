@@ -17,18 +17,16 @@ public class ProgramaMain {
 		String linha;
 		try (BufferedReader leitor = new BufferedReader(new FileReader("csv\\FUNCIONARIOS.csv"))) {
 			linha = leitor.readLine();
-			while ((linha = leitor.readLine()) != null) {
-				while (true) {
-					String[] funcionario = linha.split(";");
-					System.out.println("Digite a matricula do funcionario: ");
-					matricula = entrada.next();
-					System.out.println("Digite a senha: ");
-					senha = entrada.next();
+			while (true) {
+				String[] funcionario = linha.split(";");
+				System.out.println("Digite a matricula do funcionario: ");
+				matricula = entrada.next();
+				System.out.println("Digite a senha: ");
+				senha = entrada.next();
+				while ((linha = leitor.readLine()) != null) {
 					if (funcionario[0].equals(matricula) && funcionario[5].equals(senha)) {
 						leitor.close();
 						menuPrincipal();
-					} else {
-						System.out.println("Matricula ou senha invalida!!");
 					}
 				}
 			}
