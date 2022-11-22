@@ -11,21 +11,22 @@ public class CadastraLivro {
 	Livros livro = new Livros();
 	
 	public void cadastroLivro() {
-
-		System.out.println("Informe o código do livro: ");
-		livro.setCodigo(Integer.parseInt(ProgramaMain.entrada.next()));
+		
+		ProgramaMain.entrada.nextLine(); //"limpa" a linha
+		System.out.println("Informe o cï¿½digo do livro: ");
+		livro.setCodigo(Integer.parseInt(ProgramaMain.entrada.nextLine()));
 
 		System.out.println("Informe o autor(es) do livro: ");
-		livro.setAutores(ProgramaMain.entrada.next());
+		livro.setAutores(ProgramaMain.entrada.nextLine());
 
-		System.out.println("Informe o título do livro: ");
-		livro.setTitulo(ProgramaMain.entrada.next());
+		System.out.println("Informe o tï¿½tulo do livro: ");
+		livro.setTitulo(ProgramaMain.entrada.nextLine());
 
 		System.out.println("Informe a editora do livro: ");
-		livro.setEditora(ProgramaMain.entrada.next());
+		livro.setEditora(ProgramaMain.entrada.nextLine());
 
-		System.out.println("Informe o ano de publicação: ");
-		livro.setAnoDePubli(Integer.parseInt(ProgramaMain.entrada.next()));
+		System.out.println("Informe o ano de publicaï¿½ï¿½o: ");
+		livro.setAnoDePubli(Integer.parseInt(ProgramaMain.entrada.nextLine()));
 		
 		Random issn = new Random();
 		livro.setIssn(issn.nextInt(10000000, 99999999));

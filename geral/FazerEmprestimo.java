@@ -15,33 +15,40 @@ public class FazerEmprestimo {
 	public void emprestimo() {
 		//Gera um código aleatório para o emprestimo
 		System.out.println("Para cancelar o processo digite 0 em qualquer um dos campos de digitação.");
-		Random codigoEmprestimo = new Random();
-		emprestimo.setCodigo(codigoEmprestimo.nextInt(10000000, 99999999));
+		Random codigos = new Random();
+		emprestimo.setCodigo(codigos.nextInt(10000000, 99999999));
+		item.setCodigoItem(codigos.nextInt(10000000, 99999999));
 		item.setCodigoEmprestimo(emprestimo.getCodigo());
 		
 		//Busca e associa a matricula de professores ou alunos ao empréstimo; metodo auxi.buscaMatricula está na classe de Auxiliares.
 		while(true) {
 			System.out.println("Digite a matricula: ");
 			String matriculaStr = ProgramaMain.entrada.next();
-			Integer matricula = auxi.buscaMatricula(matriculaStr);
-			if (matricula==0) {
-				ProgramaMain.menuPrincipal();
-				break;
-			} else if (matricula == null) {
-				System.out.println("Matricula não encontrada!");
-			} else if (matriculaStr.length() == 8){
-				System.out.println("Matricula encontrada!");
-				emprestimo.setMatriculaCliente(matricula);
-				break;
+			Integer matricula = auxi.buscaMatricula(matriculaStr, 0);
+			if (auxi.buscarMulta(matricula)==false) {
+				if (matricula==0) {
+					ProgramaMain.menuPrincipal();
+					break;
+				} else if (matricula == null) {
+					System.out.println("Matricula não encontrada!");
+				} else if (matriculaStr.length() == 8){
+					System.out.println("Matricula encontrada!");
+					emprestimo.setMatriculaCliente(matricula);
+					break;
+				} else {
+					System.out.println("Matricula inválida!");
+				}
 			} else {
-				System.out.println("Matricula inválida!");
+				System.out.println("Aluno posssi multa!");
+				ProgramaMain.menuPrincipal();
+				//Função de printar informações da multa do aluno
 			}
 		}
 
 		while(true) {
 			System.out.print("Digite sua matricula de funcionário: ");
 			String matriculaStr = ProgramaMain.entrada.next();
-			Integer matricula = auxi.buscaMatricula(matriculaStr);
+			Integer matricula = auxi.buscaMatricula(matriculaStr, 3);
 			if (matricula==0) {
 				ProgramaMain.menuPrincipal();
 				break;
@@ -69,8 +76,8 @@ public class FazerEmprestimo {
 					Date dataDevolucao = dataFormat.parse(dataStr);
 					
 					if (dataDevolucao.compareTo(dataEmprestimo) == 1) {
-						emprestimo.setDataDevolucao(dataDevolucao.toString());
-						item.setDataDevolucao(dataDevolucao.toString());
+						emprestimo.setDataDevolucao(dataFormat.format(dataDevolucao));
+						item.setDataDevolucao(dataFormat.format(dataDevolucao));
 						break;
 					} else {
 						System.out.println("Data inválida.");
@@ -92,13 +99,13 @@ public class FazerEmprestimo {
 			case 1:
 				System.out.println("Escreva o código do livro: ");
 				String codigoLivro = ProgramaMain.entrada.next();
-				item.setCodigoLivro(auxi.buscaArcevo(codigoLivro));
+				item.setCodigoLivro(auxi.buscaArcevo(codigoLivro, 1));
 				passou=true;
 				break;
 			case 2:
 				System.out.println("Escreva o código do periódico: ");
 				String codigoPeriodico = ProgramaMain.entrada.next();
-				item.setCodigoPeriodico(auxi.buscaArcevo(codigoPeriodico));
+				item.setCodigoPeriodico(auxi.buscaArcevo(codigoPeriodico, 2));
 				passou=true;
 				break;
 			default:
@@ -109,11 +116,18 @@ public class FazerEmprestimo {
 				break;
 			}
 		}
-		
+		//Escreve no arquivo csv o emprestimo é o item emprestado
 		try {
 			OutputStreamWriter escritor = new OutputStreamWriter(new FileOutputStream("csv\\EMPRESTIMO.csv", true),"UTF-8");
 			escritor.write(System.lineSeparator());
 			escritor.write(emprestimo.toString());
+			System.out.println("Emprestimo feito com sucesso!");
+			escritor.close();
+			
+			escritor = new OutputStreamWriter(new FileOutputStream("csv\\ITENS.csv", true),"UTF-8");
+			escritor.write(System.lineSeparator());
+			escritor.write(item.toString());
+			escritor.close();
 		} catch (Exception e) {
 			System.out.println("Ocorreu um erro.");
 			e.printStackTrace();

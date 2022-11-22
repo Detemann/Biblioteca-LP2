@@ -12,6 +12,7 @@ public class CadastraPeriodicos {
 	
 	public void cadastroperiodico() {
 
+		ProgramaMain.entrada.nextLine(); //"limpa" a linha
 		System.out.printf("Informe o código do periodico: ");
 		periodico.setCodigo(Integer.parseInt(ProgramaMain.entrada.nextLine()));
 

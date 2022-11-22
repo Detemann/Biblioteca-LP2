@@ -6,17 +6,19 @@ import java.io.FileReader;
 // Essa classe contém metodos de busca e outras coisas
 public class Auxiliares {
 
-	public Integer buscaMatricula(String matricula) {
+	public Integer buscaMatricula(String matricula, int tipo) {
 
 		if (matricula.equals("0") != true) {
-			System.out.print(
-					"A matricula é de um aluno, professor ou funcionário?\n[1]Professor\n[2]Aluno\n[3]Funcionário\nDigite a opção: ");
-
 			try {
 				BufferedReader leitor = new BufferedReader(new FileReader("csv\\PROFESSORES.csv")); // É um leitor de
 																									// arquivo
 				String linha;
-				switch (ProgramaMain.entrada.nextInt()) {
+				if (tipo == 0) {
+					System.out.print(
+							"A matricula é de um aluno, professor ou funcionário?\n[1]Professor\n[2]Aluno\n[3]Funcionário\nDigite a opção: ");
+					tipo = ProgramaMain.entrada.nextInt();
+				}
+				switch (tipo) {
 				case 1:
 					while ((linha = leitor.readLine()) != null) {
 						String[] usuario = linha.split(";");
@@ -53,29 +55,30 @@ public class Auxiliares {
 					break;
 				default:
 					System.out.println("Opção invalida!\n");
-					buscaMatricula(matricula);
+					buscaMatricula(matricula, tipo);
 					break;
 				}
 			} catch (Exception e) {
 				System.out.println("Ocorreu um erro.");
 				return null;
 			}
-		} else return 0;
-			
+		} else
+			return 0;
 
 		return null;
 	}
 
-	public Integer buscaArcevo(String codigoLivro) {
-		
-		if (codigoLivro.equals("0") != true) {
-			System.out.print(
-					"O item é um livro ou um periódico?\n[1]Livros\n[2]Periódicos\nDigite a opção: ");
+	public Integer buscaArcevo(String codigoLivro, int tipo) {
 
+		if (codigoLivro.equals("0") != true) {
 			try {
 				BufferedReader leitor = new BufferedReader(new FileReader("csv\\LIVROS.csv"));
 				String linha;
-				switch (ProgramaMain.entrada.nextInt()) {
+				if (tipo == 0) {
+					System.out.print("O item é um livro ou um periódico?\n[1]Livros\n[2]Periódicos\nDigite a opção: ");
+					tipo = ProgramaMain.entrada.nextInt();
+				}
+				switch (tipo) {
 				case 1:
 					while ((linha = leitor.readLine()) != null) {
 						String[] livro = linha.split(";");
@@ -100,7 +103,7 @@ public class Auxiliares {
 					break;
 				default:
 					System.out.println("Opção invalida!\n");
-					buscaMatricula(codigoLivro);
+					buscaArcevo(codigoLivro, tipo);
 					break;
 				}
 			} catch (Exception e) {
@@ -108,8 +111,31 @@ public class Auxiliares {
 				e.printStackTrace();
 				return null;
 			}
-		} else return 0;
-			
+		} else
+			return 0;
+
 		return null;
+	}
+
+	public Boolean buscarMulta(int matricula) {
+		try {
+			BufferedReader leitor = new BufferedReader(new FileReader("csv\\ALUNOS.csv"));
+			String linha;
+			while ((linha=leitor.readLine())!=null) {
+				String[] aluno = linha.split(";");
+				if (aluno[0].equals(String.valueOf(matricula))&&aluno[5].equals("20")) {
+					leitor.close();
+					return true;
+				} else if (aluno[0].equals(String.valueOf(matricula))) {
+					leitor.close();
+					return false;
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("Ocorreu um erro.");
+			e.printStackTrace();
+		}
+		System.out.println("Aluno/Multa não encontrado.");
+		return false;
 	}
 }

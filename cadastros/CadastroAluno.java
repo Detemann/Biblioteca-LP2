@@ -12,20 +12,21 @@ public class CadastroAluno {
 	
 	public void cadastroAluno() {
 		
-		System.out.println("Informe a matr�cula do aluno: ");
-		aluno.setMatricula(Integer.parseInt(ProgramaMain.entrada.next()));
+		ProgramaMain.entrada.nextLine(); //"limpa" a linha
+		System.out.println("Informe a matrícula do aluno: ");
+		aluno.setMatricula(Integer.parseInt(ProgramaMain.entrada.nextLine()));
 		
 		System.out.println("Informe o nome do aluno: ");
-		aluno.setNome(ProgramaMain.entrada.next());
+		aluno.setNome(ProgramaMain.entrada.nextLine());
 		
 		System.out.println("Informe o endereço do aluno: ");
-		aluno.setEndereco(ProgramaMain.entrada.next());
+		aluno.setEndereco(ProgramaMain.entrada.nextLine());
 		
 		System.out.println("Informe curso do aluno: ");
-		aluno.setCurso(ProgramaMain.entrada.next());
+		aluno.setCurso(ProgramaMain.entrada.nextLine());
 		
 		System.out.println("Informe a data de ingresso do aluno: ");
-		aluno.setData(ProgramaMain.entrada.next());
+		aluno.setData(ProgramaMain.entrada.nextLine());
 
 		aluno.setMulta(0);
 

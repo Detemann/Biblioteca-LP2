@@ -10,26 +10,27 @@ Funcionarios funcionario = new Funcionarios();
 	
 	public void cadastroFuncionario() {
 		
-		System.out.println("Informe a matrícula do funcionario: ");
-		funcionario.setMatricula(Integer.parseInt(ProgramaMain.entrada.next()));
+		ProgramaMain.entrada.nextLine(); //"limpa" a linha
+		System.out.println("Informe a matrï¿½cula do funcionario: ");
+		funcionario.setMatricula(Integer.parseInt(ProgramaMain.entrada.nextLine()));
 		
 		System.out.println("Informe o nome do funcionario: ");
-		funcionario.setNome(ProgramaMain.entrada.next());
+		funcionario.setNome(ProgramaMain.entrada.nextLine());
 		
-		System.out.println("Informe o endereço do funcionario: ");
-		funcionario.setEndereco(ProgramaMain.entrada.next());
+		System.out.println("Informe o endereï¿½o do funcionario: ");
+		funcionario.setEndereco(ProgramaMain.entrada.nextLine());
 		
 		System.out.println("Informe o setor do funcionario: ");
-		funcionario.setSetor(ProgramaMain.entrada.next());
+		funcionario.setSetor(ProgramaMain.entrada.nextLine());
 		
 		System.out.println("Informe a data de ingresso do funcionario: ");
-		funcionario.setData(ProgramaMain.entrada.next());
+		funcionario.setData(ProgramaMain.entrada.nextLine());
 		
 		System.out.println("Informe o login do funcionario: ");
-		funcionario.setLogin(ProgramaMain.entrada.next());
+		funcionario.setLogin(ProgramaMain.entrada.nextLine());
 		
 		System.out.println("Informe a senha do usuario:  ");
-		funcionario.setSenha(ProgramaMain.entrada.next());
+		funcionario.setSenha(ProgramaMain.entrada.nextLine());
 
 		arquivarfuncionario();
 	}
