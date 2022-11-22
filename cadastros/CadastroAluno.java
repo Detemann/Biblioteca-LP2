@@ -12,19 +12,19 @@ public class CadastroAluno {
 	
 	public void cadastroAluno() {
 		
-		System.out.printf("Informe a matrícula do aluno: ");
+		System.out.println("Informe a matrícula do aluno: ");
 		aluno.setMatricula(Integer.parseInt(ProgramaMain.entrada.next()));
 		
-		System.out.printf("Informe o nome do aluno: ");
+		System.out.println("Informe o nome do aluno: ");
 		aluno.setNome(ProgramaMain.entrada.next());
 		
-		System.out.printf("Informe o endereÃ§o do aluno: ");
+		System.out.println("Informe o endereÃ§o do aluno: ");
 		aluno.setEndereco(ProgramaMain.entrada.next());
 		
-		System.out.printf("Informe curso do aluno: ");
+		System.out.println("Informe curso do aluno: ");
 		aluno.setCurso(ProgramaMain.entrada.next());
 		
-		System.out.printf("Informe a data de ingresso do aluno: ");
+		System.out.println("Informe a data de ingresso do aluno: ");
 		aluno.setData(ProgramaMain.entrada.next());
 
 		aluno.setMulta(0);

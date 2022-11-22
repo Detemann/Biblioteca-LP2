@@ -45,12 +45,12 @@ public class ProgramaMain {
 		while (op != 9) {
 			System.out.println("Informe o opcao desejada\n" 
 					+ "[1] Consultar livros emprestados\n"
-					+ "[2] Devolu��o de Livros\n"
+					+ "[2] Devolução de Livros\n"
 					+ "[3] Cadastrar novos Livros\n" 
 					+ "[4] Cadastrar Funcionario\n"					
 					+ "[5] Cadastra Professor\n" 										
 					+ "[6] Cadastra Aluno \n"							
-					+ "[7] Relat�rio Geral");//cadastrados; Alunos cadastrados; Imprimir multa individual;Livros cadastrados; Empréstimos realizados; Funcionários
+					+ "[7] Relatório Geral");//cadastrados; Alunos cadastrados; Imprimir multa individual;Livros cadastrados; Empréstimos realizados; Funcionários
 			op = entrada.nextInt();
 
 			switch (op) {

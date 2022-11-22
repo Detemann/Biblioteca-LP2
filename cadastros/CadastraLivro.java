@@ -12,19 +12,19 @@ public class CadastraLivro {
 	
 	public void cadastroLivro() {
 
-		System.out.printf("Informe o código do livro: ");
+		System.out.println("Informe o código do livro: ");
 		livro.setCodigo(Integer.parseInt(ProgramaMain.entrada.next()));
 
-		System.out.printf("Informe o autor(es) do livro: ");
+		System.out.println("Informe o autor(es) do livro: ");
 		livro.setAutores(ProgramaMain.entrada.next());
 
-		System.out.printf("Informe o título do livro: ");
+		System.out.println("Informe o título do livro: ");
 		livro.setTitulo(ProgramaMain.entrada.next());
 
-		System.out.printf("Informe a editora do livro: ");
+		System.out.println("Informe a editora do livro: ");
 		livro.setEditora(ProgramaMain.entrada.next());
 
-		System.out.printf("Informe o ano de publicação: ");
+		System.out.println("Informe o ano de publicação: ");
 		livro.setAnoDePubli(Integer.parseInt(ProgramaMain.entrada.next()));
 		
 		Random issn = new Random();
