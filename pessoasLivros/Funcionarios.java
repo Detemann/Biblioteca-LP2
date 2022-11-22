@@ -54,6 +54,6 @@ public class Funcionarios {
 	}
 	public String toString() {
 		return matricula+";"+nome+";"+endereco+";"+setor+
-				";"+data+";"+ login+ ";" + senha;
+				";"+data+";"+ senha+ ";" + login;
 	}
 }
