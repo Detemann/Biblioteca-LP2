@@ -23,7 +23,7 @@ public class FazerEmprestimo {
 			String matriculaStr = ProgramaMain.entrada.next();
 			Integer matricula = auxi.buscaMatricula(matriculaStr);
 			if (matricula==0) {
-				ProgramaMain.menuUsuarios();
+				ProgramaMain.menuPrincipal();
 				break;
 			} else if (matricula == null) {
 				System.out.println("Matricula não encontrada!");
@@ -41,7 +41,7 @@ public class FazerEmprestimo {
 			String matriculaStr = ProgramaMain.entrada.next();
 			Integer matricula = auxi.buscaMatricula(matriculaStr);
 			if (matricula==0) {
-				ProgramaMain.menuUsuarios();
+				ProgramaMain.menuPrincipal();
 				break;
 			} else if (matricula == null) {
 				System.out.println("Matricula não encontrada!");
@@ -66,7 +66,7 @@ public class FazerEmprestimo {
 					Date dataEmprestimo = dataFormat.parse(emprestimo.getDataEmprestimo());
 					Date dataDevolucao = dataFormat.parse(dataStr);
 					
-					if (dataEmprestimo.compareTo(dataDevolucao) == 1) {
+					if (dataDevolucao.compareTo(dataEmprestimo) == 1) {
 						emprestimo.setDataDevolucao(dataDevolucao.toString());
 						item.setDataDevolucao(dataDevolucao.toString());
 						break;
@@ -80,5 +80,7 @@ public class FazerEmprestimo {
 				System.out.println("Formato de data inválido, insira conforme esse padrão Dia/Mês/Ano !");
 			}
 		}
+		
+		
 	}
 }
