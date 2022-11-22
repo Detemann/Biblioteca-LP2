@@ -78,7 +78,8 @@ public class ProgramaMain {
 				novoAluno.cadastroAluno();
 				break;
 			case 7:
-				
+				LerArquivos arquivo = new LerArquivos();
+				arquivo.imprimeTudo();
 				break;
 			case 9:
 				System.out.println("Fim de programa!");
