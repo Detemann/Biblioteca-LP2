@@ -105,6 +105,7 @@ public class Auxiliares {
 				}
 			} catch (Exception e) {
 				System.out.println("Ocorreu um erro.");
+				e.printStackTrace();
 				return null;
 			}
 		} else return 0;

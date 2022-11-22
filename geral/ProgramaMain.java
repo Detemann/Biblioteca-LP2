@@ -3,7 +3,6 @@ package geral;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.*;
-
 import cadastros.CadastraFuncionarios;
 import cadastros.CadastraLivro;
 
@@ -33,6 +32,7 @@ public class ProgramaMain {
 			}
 		} catch (Exception e) {
 			System.out.println("Ocorreu um erro.");
+			e.printStackTrace();
 		}
 	}
 
@@ -41,8 +41,6 @@ public class ProgramaMain {
 		System.out.println("\n=============== BIBLIOTECA DO(A) XXXXXXXXXX ===============");
 		int op = 0;
 		while (op != 9) {
-			// PRECISA SER REALIZADO UMA AUTENTICACAO DE USUARIO ANTES DE EXIBIR A TELA DE
-			// MENU
 			System.out.println("Informe o opcao desejada\n" + "[1] Consultar livros emprestados\n"
 					+ "[2] Devolução de Livros\n" + "[3] Cadastrar novos Livros\n" + "[4] Cadastrar novos Usuários\n"
 					// Aluno

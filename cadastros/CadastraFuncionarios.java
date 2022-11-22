@@ -43,6 +43,7 @@ Funcionarios funcionario = new Funcionarios();
 			escritor.close();
 		} catch (Exception e) {
 			System.out.println("Ocorreu um erro.");
+			e.printStackTrace();
 		}
 	}
 }

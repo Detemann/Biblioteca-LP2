@@ -37,6 +37,7 @@ public class PlanilhaItensEmprestimos {
 	public void setDataDevolucao(String dataDevolucao) {
 		this.dataDevolucao = dataDevolucao;
 	}
-	
-	
+	public String toString() {
+		return codigoItem+";"+codigoEmprestimo+";"+codigoLivro+";"+codigoPeriodico+";"+dataDevolucao;
+	}
 }

@@ -38,6 +38,7 @@ public class PlanilhaDeEmprestimos {
 	public void setDataDevolucao(String dataDevolucao) {
 		this.dataDevolucao = dataDevolucao;
 	}
-	
-	
+	public String toString() {
+		return codigo+";"+matriculaCliente+";"+matriculaFuncionarios+";"+dataEmprestimo+";"+dataDevolucao;
+	}
 }

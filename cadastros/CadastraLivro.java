@@ -45,6 +45,7 @@ public class CadastraLivro {
 			System.out.println("Cadastro realizado com sucesso!");
 		} catch (Exception e) {
 			System.out.println("Ocorreu um erro.");
+			e.printStackTrace();
 		}
 	}
 }

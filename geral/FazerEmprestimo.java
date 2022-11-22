@@ -1,5 +1,7 @@
 package geral;
 
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -75,12 +77,15 @@ public class FazerEmprestimo {
 					}
 				} catch (ParseException e) {
 					System.out.println("Ocorreu um erro.");
+					e.printStackTrace();
 				}
 			} else {
 				System.out.println("Formato de data inválido, insira conforme esse padrão Dia/Mês/Ano !");
 			}
 		}
-		
+		// Busca o livro
+		System.out.println("O item é um livro ou periódico?");
+		boolean passou = false;
 		while(true) {
 			System.out.println("[1]Livro\n[2]Periódico");
 			switch (ProgramaMain.entrada.nextInt()) {
@@ -88,15 +93,30 @@ public class FazerEmprestimo {
 				System.out.println("Escreva o código do livro: ");
 				String codigoLivro = ProgramaMain.entrada.next();
 				item.setCodigoLivro(auxi.buscaArcevo(codigoLivro));
+				passou=true;
 				break;
 			case 2:
 				System.out.println("Escreva o código do periódico: ");
 				String codigoPeriodico = ProgramaMain.entrada.next();
 				item.setCodigoPeriodico(auxi.buscaArcevo(codigoPeriodico));
+				passou=true;
 				break;
 			default:
+				System.out.println("Opção inválida!");
 				break;
 			}
+			if (passou==true) {
+				break;
+			}
+		}
+		
+		try {
+			OutputStreamWriter escritor = new OutputStreamWriter(new FileOutputStream("csv\\EMPRESTIMO.csv", true),"UTF-8");
+			escritor.write(System.lineSeparator());
+			escritor.write(emprestimo.toString());
+		} catch (Exception e) {
+			System.out.println("Ocorreu um erro.");
+			e.printStackTrace();
 		}
 	}
 }
