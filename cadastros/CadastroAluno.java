@@ -12,20 +12,20 @@ public class CadastroAluno {
 	
 	public void cadastroAluno() {
 		
-		System.out.printf("Informe a matrículaa do aluno: ");
-		aluno.setMatricula(Integer.parseInt(ProgramaMain.entrada.nextLine()));
+		System.out.printf("Informe a matr�cula do aluno: ");
+		aluno.setMatricula(Integer.parseInt(ProgramaMain.entrada.next()));
 		
 		System.out.printf("Informe o nome do aluno: ");
-		aluno.setNome(ProgramaMain.entrada.nextLine());
+		aluno.setNome(ProgramaMain.entrada.next());
 		
 		System.out.printf("Informe o endereço do aluno: ");
-		aluno.setEndereco(ProgramaMain.entrada.nextLine());
+		aluno.setEndereco(ProgramaMain.entrada.next());
 		
 		System.out.printf("Informe curso do aluno: ");
-		aluno.setCurso(ProgramaMain.entrada.nextLine());
+		aluno.setCurso(ProgramaMain.entrada.next());
 		
 		System.out.printf("Informe a data de ingresso do aluno: ");
-		aluno.setData(ProgramaMain.entrada.nextLine());
+		aluno.setData(ProgramaMain.entrada.next());
 
 		aluno.setMulta(0);
 
@@ -34,8 +34,8 @@ public class CadastroAluno {
 	
 	public void arquivarAluno() {
 		try {
-			OutputStreamWriter escritor = new OutputStreamWriter(new FileOutputStream("csv\\ALUNOS.csv", true), "UTF-8"); //Faz o mesmo que o FileWriter
-			escritor.write(System.lineSeparator());                                                                       //Só que consigo configurar os chars para UTF-8
+			OutputStreamWriter escritor = new OutputStreamWriter(new FileOutputStream("csv\\ALUNOS.csv", true), "UTF-8");
+			escritor.write(System.lineSeparator());                                                                       
 			escritor.write(aluno.toString());
 			escritor.close();
 			System.out.println("Cadastro realizado com sucesso!");

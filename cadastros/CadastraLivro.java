@@ -12,20 +12,20 @@ public class CadastraLivro {
 	
 	public void cadastroLivro() {
 
-		System.out.printf("Informe o cÃ³digo do livro: ");
-		livro.setCodigo(Integer.parseInt(ProgramaMain.entrada.nextLine()));
+		System.out.printf("Informe o código do livro: ");
+		livro.setCodigo(Integer.parseInt(ProgramaMain.entrada.next()));
 
 		System.out.printf("Informe o autor(es) do livro: ");
-		livro.setAutores(ProgramaMain.entrada.nextLine());
+		livro.setAutores(ProgramaMain.entrada.next());
 
-		System.out.printf("Informe o tÃ­tulo do livro: ");
-		livro.setTitulo(ProgramaMain.entrada.nextLine());
+		System.out.printf("Informe o título do livro: ");
+		livro.setTitulo(ProgramaMain.entrada.next());
 
 		System.out.printf("Informe a editora do livro: ");
-		livro.setEditora(ProgramaMain.entrada.nextLine());
+		livro.setEditora(ProgramaMain.entrada.next());
 
-		System.out.printf("Informe o ano de publicaÃ§Ã£o: ");
-		livro.setAnoDePubli(Integer.parseInt(ProgramaMain.entrada.nextLine()));
+		System.out.printf("Informe o ano de publicação: ");
+		livro.setAnoDePubli(Integer.parseInt(ProgramaMain.entrada.next()));
 		
 		Random issn = new Random();
 		livro.setIssn(issn.nextInt(10000000, 99999999));
@@ -37,9 +37,8 @@ public class CadastraLivro {
 
 	public void arquivarlivro() {
 		try {
-			OutputStreamWriter escritor = new OutputStreamWriter(new FileOutputStream("csv\\LIVROS.csv", true),
-					"UTF-8"); // Faz o mesmo que o FileWriter
-			escritor.write(System.lineSeparator()); // SÃ³ que consigo configurar os chars para UTF-8
+			OutputStreamWriter escritor = new OutputStreamWriter(new FileOutputStream("csv\\LIVROS.csv", true),"UTF-8"); 
+			escritor.write(System.lineSeparator()); 
 			escritor.write(livro.toString());
 			escritor.close();
 			System.out.println("Cadastro realizado com sucesso!");

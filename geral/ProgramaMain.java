@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.util.*;
 import cadastros.CadastraFuncionarios;
 import cadastros.CadastraLivro;
+import cadastros.CadastroAluno;
+import cadastros.CadastroProfessor;
 
 public class ProgramaMain {
 	public static final Scanner entrada = new Scanner(System.in);
@@ -36,20 +38,19 @@ public class ProgramaMain {
 		}
 	}
 
-	// MENU DE USUARIO
+	// MENU DE FUNCIONARIO
 	public static void menuPrincipal() {
 		System.out.println("\n=============== BIBLIOTECA DO(A) XXXXXXXXXX ===============");
 		int op = 0;
 		while (op != 9) {
-			System.out.println("Informe o opcao desejada\n" + "[1] Consultar livros emprestados\n"
-					+ "[2] Devolução de Livros\n" + "[3] Cadastrar novos Livros\n" + "[4] Cadastrar novos Usuários\n"
-					// Aluno
-					// ou
-					// Funcionário
-					+ "[5] Relatório Geral\n" // Livros cadastrados; Empréstimos realizados; Funcionários
-												// cadastrados; Alunos cadastrados; Imprimir multa individual;
-					+ "[6] Funcao6");
-
+			System.out.println("Informe o opcao desejada\n" 
+					+ "[1] Consultar livros emprestados\n"
+					+ "[2] Devolu��o de Livros\n"
+					+ "[3] Cadastrar novos Livros\n" 
+					+ "[4] Cadastrar Funcionario\n"					
+					+ "[5] Cadastra Professor\n" 										
+					+ "[6] Cadastra Aluno \n"							
+					+ "[7] Relat�rio Geral");//cadastrados; Alunos cadastrados; Imprimir multa individual;Livros cadastrados; Empréstimos realizados; Funcionários
 			op = entrada.nextInt();
 
 			switch (op) {
@@ -69,10 +70,15 @@ public class ProgramaMain {
 				novoFunc.cadastroFuncionario();
 				break;
 			case 5:
-
+				CadastroProfessor novoProf = new CadastroProfessor();
+				novoProf.cadastroProfessor();
 				break;
 			case 6:
-
+				CadastroAluno novoAluno = new CadastroAluno();
+				novoAluno.cadastroAluno();
+				break;
+			case 7:
+				
 				break;
 			case 9:
 				System.out.println("Fim de programa!");
