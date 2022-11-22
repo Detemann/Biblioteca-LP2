@@ -10,20 +10,21 @@ public class CadastroProfessor {
 	
 	public void cadastroProfessor() {
 		
-		System.out.println("Informe a matrícula do professor: ");
-		professor.setMatricula(Integer.parseInt(ProgramaMain.entrada.next()));
+		ProgramaMain.entrada.nextLine(); //"limpa" a linha
+		System.out.println("Informe a matrï¿½cula do professor: ");
+		professor.setMatricula(Integer.parseInt(ProgramaMain.entrada.nextLine()));
 		
 		System.out.println("Informe o nome do professor: ");
-		professor.setNome(ProgramaMain.entrada.next());
+		professor.setNome(ProgramaMain.entrada.nextLine());
 		
-		System.out.println("Informe o endereço do professor: ");
-		professor.setEndereco(ProgramaMain.entrada.next());
+		System.out.println("Informe o endereï¿½o do professor: ");
+		professor.setEndereco(ProgramaMain.entrada.nextLine());
 		
 		System.out.println("Informe o setor do professor: ");
-		professor.setSetor(ProgramaMain.entrada.next());
+		professor.setSetor(ProgramaMain.entrada.nextLine());
 		
 		System.out.println("Informe a data de ingresso do professor: ");
-		professor.setData(ProgramaMain.entrada.next());
+		professor.setData(ProgramaMain.entrada.nextLine());
 
 		arquivarProfessor();
 	}
