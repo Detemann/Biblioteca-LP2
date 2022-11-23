@@ -10,26 +10,28 @@ import pessoasLivros.Periodicos;
 public class CadastraPeriodicos {
 	Periodicos periodico = new Periodicos();
 	
-	public void cadastroperiodico() {
+	public void cadastroPeriodico() {
 
 		ProgramaMain.entrada.nextLine(); //"limpa" a linha
-		System.out.printf("Informe o código do periodico: ");
+		System.out.println("Informe o código do periodico: ");
 		periodico.setCodigo(Integer.parseInt(ProgramaMain.entrada.nextLine()));
 
-		System.out.printf("Informe o autor(es) do periodico: ");
+		System.out.println("Informe o autor(es) do periodico: ");
 		periodico.setAutores(ProgramaMain.entrada.nextLine());
 
-		System.out.printf("Informe o título do periodico: ");
+		System.out.println("Informe o t�tulo do periodico: ");
 		periodico.setTitulo(ProgramaMain.entrada.nextLine());
 
-		System.out.printf("Informe o fator de impacto do periodico: ");
+		System.out.println("Informe o fator de impacto do periodico: ");
 		periodico.setFatorDeImpacto(Double.parseDouble(ProgramaMain.entrada.nextLine()));
 		
 		Random issn = new Random();
 		periodico.setIssn(issn.nextInt(10000000, 99999999));
 
 		periodico.setTipo('p');
-
+	
+		periodico.setDisponivel(true);
+		
 		arquivarperiodico();
 	}
 

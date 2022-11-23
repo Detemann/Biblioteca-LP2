@@ -51,7 +51,7 @@ public class Periodicos {
 		this.disponivel = disponivel;
 	}
 	public String toString() {
-		return codigo+";"+autores+";"+titulo+";"+tipo+";"+fatorDeImpacto+";"+issn+";"+disponivel;
+		return codigo+";"+autores+";"+titulo+";"+tipo+";"+fatorDeImpacto+";"+issn+";"+disponivel+";";
 	}
 	
 }	

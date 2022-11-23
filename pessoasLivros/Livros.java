@@ -58,6 +58,6 @@ public class Livros {
 		this.disponivel = disponivel;
 	}
 	public String toString() {
-		return codigo+";"+autores+";"+titulo+";"+editora+";"+tipo+";"+anoDePubli+";"+issn;
+		return codigo+";"+autores+";"+titulo+";"+editora+";"+tipo+";"+anoDePubli+";"+issn + ";" + disponivel +";";
 	}
 }
