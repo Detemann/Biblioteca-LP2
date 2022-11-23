@@ -134,7 +134,6 @@ public class Auxiliares {
 	public void setDisponibilidade(String[] item, int tipo) {
 		try {
 			BufferedReader leitor = new BufferedReader(new FileReader("csv\\LIVROS.csv"));
-			OutputStreamWriter escritor = new OutputStreamWriter(new FileOutputStream("csv\\LIVROS.csv"),"UTF-8");
 			
 			switch (tipo) {
 			case 1:
@@ -143,19 +142,20 @@ public class Auxiliares {
 				while ((linhaLivros = leitor.readLine()) != null) {
 					novasLinhasLivros += linhaLivros+"\n";
 				}
+				
 				String livroStr="";
 				for (String string : item) {
 					livroStr += ";"+string;
 				}
 				livroStr = livroStr.replaceFirst(";", "");
-				novasLinhasLivros = novasLinhasLivros.replace(livroStr, livroStr = livroStr.replace("true", "false"));
+				novasLinhasLivros = novasLinhasLivros.replace(livroStr, (livroStr = livroStr.replace("true", "false")));
 				leitor.close();
 				
+				OutputStreamWriter escritor = new OutputStreamWriter(new FileOutputStream("csv\\LIVROS.csv"),"UTF-8");
 				escritor.write(novasLinhasLivros);
 				escritor.close();
 				break;
 			case 2:
-				escritor.close();
 				escritor = new OutputStreamWriter(new FileOutputStream("csv\\PERIODICOS.csv"),"UTF-8");
 				String linhaPeriodicos;
 				String novasLinhasPeriodicos="";
@@ -174,6 +174,7 @@ public class Auxiliares {
 				escritor.close();
 				break;
 			default:
+				System.out.println("AAAAAAAAAAA");
 				break;
 			}
 		} catch (Exception e) {
