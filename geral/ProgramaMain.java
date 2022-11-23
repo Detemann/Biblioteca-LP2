@@ -50,7 +50,8 @@ public class ProgramaMain {
 					+ "[4] Cadastrar Funcionario\n"					
 					+ "[5] Cadastra Professor\n" 										
 					+ "[6] Cadastra Aluno \n"							
-					+ "[7] Relatório Geral");//cadastrados; Alunos cadastrados; Imprimir multa individual;Livros cadastrados; Empréstimos realizados; Funcionários
+					+ "[7] Relatório Geral \n"
+					+ "[9] sair do programa");
 			op = entrada.nextInt();
 
 			switch (op) {
