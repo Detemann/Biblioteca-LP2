@@ -25,7 +25,7 @@ public class CadastraLivro {
 		System.out.println("Informe a editora do livro: ");
 		livro.setEditora(ProgramaMain.entrada.nextLine());
 
-		System.out.println("Informe o ano de publicaï¿½ï¿½o: ");
+		System.out.println("Informe o ano de publicaï¿½ï¿½o(apenas o ano de publicaoção): ");
 		livro.setAnoDePubli(Integer.parseInt(ProgramaMain.entrada.nextLine()));
 		
 		Random issn = new Random();

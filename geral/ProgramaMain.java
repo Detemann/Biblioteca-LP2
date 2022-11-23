@@ -19,7 +19,7 @@ public class ProgramaMain {
 		try (BufferedReader leitor = new BufferedReader(new FileReader("csv\\FUNCIONARIOS.csv"))) {
 			linha = leitor.readLine();
 			while (true) {
-				System.out.println("Digite a matricula do funcionario: ");
+				System.out.println("Digite o login do funcionario: ");
 				matricula = entrada.next();
 				System.out.println("Digite a senha: ");
 				senha = entrada.next();
@@ -30,7 +30,7 @@ public class ProgramaMain {
 						menuPrincipal();
 					}
 				}
-				System.out.println("Matrícula ou senha inválido");
+				System.out.println("login ou senha inválido");
 			}
 		} catch (Exception e) {
 			System.out.println("Ocorreu um erro.");
@@ -44,7 +44,7 @@ public class ProgramaMain {
 		int op = 0;
 		while (op != 9) {
 			System.out.println("Informe o opcao desejada\n" 
-					+ "[1] Consultar livros emprestados\n"
+					+ "[1] Fazer Emprestimo\n"
 					+ "[2] Devolução de Livros\n"
 					+ "[3] Cadastrar novos Livros\n" 
 					+ "[4] Cadastrar Funcionario\n"					
