@@ -32,6 +32,8 @@ public class CadastraLivro {
 		livro.setIssn(issn.nextInt(10000000, 99999999));
 
 		livro.setTipo('l');
+		
+		livro.setDisponivel(true);
 
 		arquivarlivro();
 	}

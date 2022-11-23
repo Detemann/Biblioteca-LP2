@@ -99,14 +99,25 @@ public class FazerEmprestimo {
 			case 1:
 				System.out.println("Escreva o código do livro: ");
 				String codigoLivro = ProgramaMain.entrada.next();
-				item.setCodigoLivro(auxi.buscaArcevo(codigoLivro, 1));
-				passou=true;
+				String[] livroInfo = auxi.buscaArcevo(codigoLivro, 1);
+				item.setCodigoLivro(Integer.parseInt(livroInfo[0]));
+				if (item.getCodigoLivro()==-1) {
+					System.out.println("O livro solicitado existe mas não está disponível.");
+				} else {
+					auxi.setDisponibilidade(livroInfo, 1);
+					passou=true;
+				}
 				break;
 			case 2:
 				System.out.println("Escreva o código do periódico: ");
 				String codigoPeriodico = ProgramaMain.entrada.next();
-				item.setCodigoPeriodico(auxi.buscaArcevo(codigoPeriodico, 2));
-				passou=true;
+				String[] periodicoInfo = auxi.buscaArcevo(codigoPeriodico, 1);
+				item.setCodigoPeriodico(Integer.parseInt(periodicoInfo[0]));
+				if (item.getCodigoPeriodico()==-1) {
+					System.out.println("O periódico solicitado existe mas não está disponível.");
+				} else {
+					passou=true;
+				}
 				break;
 			default:
 				System.out.println("Opção inválida!");

@@ -25,7 +25,7 @@ public class ProgramaMain {
 				senha = entrada.next();
 				while ((linha = leitor.readLine()) != null) {
 					String[] funcionario = linha.split(";");
-					if (funcionario[0].equals(matricula) && funcionario[5].equals(senha)) {
+					if (funcionario[6].equals(matricula) && funcionario[5].equals(senha)) {
 						leitor.close();
 						menuPrincipal();
 					}

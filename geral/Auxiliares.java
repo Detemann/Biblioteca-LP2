@@ -1,7 +1,9 @@
 package geral;
 
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.OutputStreamWriter;
 
 // Essa classe contém metodos de busca e outras coisas
 public class Auxiliares {
@@ -68,7 +70,7 @@ public class Auxiliares {
 		return null;
 	}
 
-	public Integer buscaArcevo(String codigoLivro, int tipo) {
+	public String[] buscaArcevo(String codigoLivro, int tipo) {
 
 		if (codigoLivro.equals("0") != true) {
 			try {
@@ -83,8 +85,14 @@ public class Auxiliares {
 					while ((linha = leitor.readLine()) != null) {
 						String[] livro = linha.split(";");
 						if (livro[0].equals(codigoLivro)) {
-							leitor.close();
-							return Integer.parseInt(livro[0]);
+							if (livro[7].equals("true")) {
+								leitor.close();
+								return livro;
+							} else {
+								leitor.close();
+								livro[0]="-1";
+								return livro;
+							}
 						}
 					}
 					leitor.close();
@@ -95,8 +103,14 @@ public class Auxiliares {
 					while ((linha = leitor.readLine()) != null) {
 						String[] periodico = linha.split(";");
 						if (periodico[0].equals(codigoLivro)) {
-							leitor.close();
-							return Integer.parseInt(periodico[0]);
+							if (periodico[7].equals("true")) {
+								leitor.close();
+								return periodico;
+							} else {
+								leitor.close();
+								periodico[0]="-1";
+								return periodico;
+							}
 						}
 					}
 					leitor.close();
@@ -112,13 +126,65 @@ public class Auxiliares {
 				return null;
 			}
 		} else
-			return 0;
-
+			return null;
+		
 		return null;
+	}
+	
+	public void setDisponibilidade(String[] item, int tipo) {
+		try {
+			BufferedReader leitor = new BufferedReader(new FileReader("csv\\LIVROS.csv"));
+			OutputStreamWriter escritor = new OutputStreamWriter(new FileOutputStream("csv\\LIVROS.csv"),"UTF-8");
+			
+			switch (tipo) {
+			case 1:
+				String linhaLivros;
+				String novasLinhasLivros="";
+				while ((linhaLivros = leitor.readLine()) != null) {
+					novasLinhasLivros += linhaLivros+"\n";
+				}
+				String livroStr="";
+				for (String string : item) {
+					livroStr += ";"+string;
+				}
+				livroStr = livroStr.replaceFirst(";", "");
+				novasLinhasLivros = novasLinhasLivros.replace(livroStr, livroStr = livroStr.replace("true", "false"));
+				leitor.close();
+				
+				escritor.write(novasLinhasLivros);
+				escritor.close();
+				break;
+			case 2:
+				escritor.close();
+				escritor = new OutputStreamWriter(new FileOutputStream("csv\\PERIODICOS.csv"),"UTF-8");
+				String linhaPeriodicos;
+				String novasLinhasPeriodicos="";
+				while ((linhaPeriodicos = leitor.readLine()) != null) {
+					novasLinhasPeriodicos += linhaPeriodicos+"\n";
+				}
+				String periodicoStr="";
+				for (String string : item) {
+					periodicoStr += ";"+string;
+				}
+				periodicoStr = periodicoStr.replaceFirst(";", "");
+				novasLinhasPeriodicos = novasLinhasPeriodicos.replace(periodicoStr, livroStr = periodicoStr.replace("true", "false"));
+				leitor.close();
+				
+				escritor.write(novasLinhasPeriodicos);
+				escritor.close();
+				break;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			System.out.println("Ocorreu um erro.");
+			e.printStackTrace();
+		}
 	}
 
 	public Boolean buscarMulta(int matricula) {
 		try {
+			@SuppressWarnings("resource")
 			BufferedReader leitor = new BufferedReader(new FileReader("csv\\ALUNOS.csv"));
 			String linha;
 			while ((linha=leitor.readLine())!=null) {
