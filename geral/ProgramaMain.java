@@ -56,7 +56,8 @@ public class ProgramaMain {
 				novoEmp.emprestimo();
 				break;
 			case 2:
-
+				FazerDevolucao buscaDevolucao = new FazerDevolucao();
+				buscaDevolucao.devolucao();
 				break;
 			case 3:
 				CadastraPeriodicos novoPeriodico = new CadastraPeriodicos();

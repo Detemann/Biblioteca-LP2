@@ -11,7 +11,7 @@ import java.util.Date;
 public class Auxiliares {
 
 	public Integer buscaMatricula(String matricula, int tipo) {
-		
+
 		// 1 para Professores; 2 para Alunos; 3 para Funcionários
 		if (matricula.equals("0") != true) {
 			try {
@@ -74,10 +74,10 @@ public class Auxiliares {
 		return null;
 	}
 
-	public String[] buscaArcevo(String codigoLivro, int tipo) {
-		
-		// 1 para livros; 2 para periódicos
-		if (codigoLivro.equals("0") != true) {
+	public String[] buscaArcevo(String codigoItem, int tipo) {
+
+		// 1 para livros; 2 para periódicos; 3 para indefinido, atenção tipo indefinido buscará em todo o arcevo.
+		if (codigoItem.equals("0") != true) {
 			try {
 				BufferedReader leitor = new BufferedReader(new FileReader("csv\\LIVROS.csv"));
 				String linha;
@@ -85,46 +85,70 @@ public class Auxiliares {
 					System.out.print("O item é um livro ou um periódico?\n[1]Livros\n[2]Periódicos\nDigite a opção: ");
 					tipo = ProgramaMain.entrada.nextInt();
 				}
-				switch (tipo) {
-				case 1:
-					while ((linha = leitor.readLine()) != null) {
-						String[] livro = linha.split(";");
-						if (livro[0].equals(codigoLivro)) {
-							if (livro[7].equals("true")) {
-								leitor.close();
-								return livro;
-							} else {
-								leitor.close();
-								livro[0]="-1";
-								return livro;
+				
+					switch (tipo) {
+					case 1:
+						while ((linha = leitor.readLine()) != null) {
+							String[] livro = linha.split(";");
+							if (livro[0].equals(codigoItem)) {
+								if (livro[7].equals("true")) {
+									leitor.close();
+									return livro;
+								} else {
+									leitor.close();
+									livro[0] = "-1";
+									return livro;
+								}
 							}
 						}
-					}
-					leitor.close();
-					break;
-				case 2:
-					leitor.close();
-					leitor = new BufferedReader(new FileReader("csv\\PERIODICOS.csv"));
-					while ((linha = leitor.readLine()) != null) {
-						String[] periodico = linha.split(";");
-						if (periodico[0].equals(codigoLivro)) {
-							if (periodico[7].equals("true")) {
-								leitor.close();
-								return periodico;
-							} else {
-								leitor.close();
-								periodico[0]="-1";
-								return periodico;
+						leitor.close();
+						break;
+					case 2:
+						leitor.close();
+						leitor = new BufferedReader(new FileReader("csv\\PERIODICOS.csv"));
+						while ((linha = leitor.readLine()) != null) {
+							String[] periodico = linha.split(";");
+							if (periodico[0].equals(codigoItem)) {
+								if (periodico[7].equals("true")) {
+									leitor.close();
+									return periodico;
+								} else {
+									leitor.close();
+									periodico[0] = "-1";
+									return periodico;
+								}
 							}
 						}
+						leitor.close();
+						break;
+					case 3:
+						while ((linha = leitor.readLine()) != null) {
+							String[] livro = linha.split(";");
+							if (livro[0].equals(codigoItem)) {
+								if (livro[7].equals("true")) {
+									leitor.close();
+									return livro;
+								}
+							}
+						}
+						
+						leitor.close();
+						leitor = new BufferedReader(new FileReader("csv\\PERIODICOS.csv"));
+						while ((linha = leitor.readLine()) != null) {
+							String[] periodico = linha.split(";");
+							if (periodico[0].equals(codigoItem)) {
+								if (periodico[7].equals("true")) {
+									leitor.close();
+									return periodico;
+								}
+							}
+						}
+						break;
+					default:
+						System.out.println("Opção invalida!\n");
+						buscaArcevo(codigoItem, tipo);
+						break;
 					}
-					leitor.close();
-					break;
-				default:
-					System.out.println("Opção invalida!\n");
-					buscaArcevo(codigoLivro, tipo);
-					break;
-				}
 			} catch (Exception e) {
 				System.out.println("Ocorreu um erro.");
 				e.printStackTrace();
@@ -132,33 +156,56 @@ public class Auxiliares {
 			}
 		} else
 			return null;
-		
-		return null;
+		String[] resultado = {"0"};
+		return resultado;
 	}
-	
-	public Integer[] buscaEmprestimo(int matricula) {
-		
+
+	public String[] buscaEmprestimo(int matricula, int modo) {
+
+		// O modo vai mudar a forma que o metodo retorna, se 1 o metodo retorna um string[] que será a matricula e se o prazo de entrega foi excedido.
+		// Se 2 o metodo retorna todas as informações referente ao emprestimo.
 		if (matricula != 0) {
 			try {
 				BufferedReader leitor = new BufferedReader(new FileReader("csv\\EMPRESTIMO.csv"));
-																									
-				String linha;
-				while ((linha = leitor.readLine()) != null) {
-					String[] emprestimo = linha.split(";");
-					if (emprestimo[1].equals(String.valueOf(matricula))) {
-						leitor.close();
-						int[] resultado = new int[2];
-						resultado[0] = Integer.parseInt(emprestimo[0]);
-						
-						SimpleDateFormat formatData = new SimpleDateFormat();
-						Date dataHoje = new Date();
-						Date dataDevolução = formatData.parse(emprestimo[4]);
-						if (dataHoje.after(dataDevolução)) {
-							resultado[1] = 1;
-						} else {				//1 para tem multa; 0 para não tem multa
-							resultado[1] = 0;
+
+				switch (modo) {
+				case 1:
+					String linha;
+					while ((linha = leitor.readLine()) != null) {
+						String[] emprestimo = linha.split(";");
+						if (emprestimo[1].equals(String.valueOf(matricula))) {
+							leitor.close();
+
+							SimpleDateFormat formatData = new SimpleDateFormat("dd/MM/yyyy");
+							Date dataHoje = new Date();
+							Date dataDevolução = formatData.parse(emprestimo[4]);
+
+							String[] resultado = new String[2];
+							resultado[0] = emprestimo[0];
+							if (dataHoje.after(dataDevolução)) {
+								resultado[1] = "1";
+								return resultado;
+							} else { 		// 1 para tem multa; 0 para não tem multa
+								resultado[1] = "0";
+								return resultado;
+							}
 						}
 					}
+					break;
+				case 2:
+					while ((linha = leitor.readLine()) != null) {
+						String[] emprestimo = linha.split(";");
+						if (emprestimo[1].equals(String.valueOf(matricula))) {
+							leitor.close();
+							for (int i = 1; i < emprestimo.length; i++) {
+								emprestimo[0] += "; "+emprestimo[i];
+							}
+							return emprestimo;
+						}
+					}
+					break;
+				default:
+					break;
 				}
 				leitor.close();
 			} catch (Exception e) {
@@ -171,9 +218,9 @@ public class Auxiliares {
 
 		return null;
 	}
-	
-public Integer buscaItem(int codigo, int tipo) {
-		
+
+	public Integer buscaItem(int codigo, int tipo) {
+
 		// 1 para livros; 2 para periódicos
 		if (codigo != 0) {
 			try {
@@ -215,46 +262,47 @@ public Integer buscaItem(int codigo, int tipo) {
 
 		return null;
 	}
-	
+
 	public void setDisponibilidade(String[] item, int tipo) {
 		try {
 			BufferedReader leitor = new BufferedReader(new FileReader("csv\\LIVROS.csv"));
-			
+
 			switch (tipo) {
 			case 1:
 				String linhaLivros;
-				String novasLinhasLivros="";
+				String novasLinhasLivros = "";
 				while ((linhaLivros = leitor.readLine()) != null) {
-					novasLinhasLivros += linhaLivros+"\n";
+					novasLinhasLivros += linhaLivros + "\n";
 				}
-				
-				String livroStr="";
+
+				String livroStr = "";
 				for (String string : item) {
-					livroStr += ";"+string;
+					livroStr += ";" + string;
 				}
 				livroStr = livroStr.replaceFirst(";", "");
 				novasLinhasLivros = novasLinhasLivros.replace(livroStr, (livroStr = livroStr.replace("true", "false")));
 				leitor.close();
-				
-				OutputStreamWriter escritor = new OutputStreamWriter(new FileOutputStream("csv\\LIVROS.csv"),"UTF-8");
+
+				OutputStreamWriter escritor = new OutputStreamWriter(new FileOutputStream("csv\\LIVROS.csv"), "UTF-8");
 				escritor.write(novasLinhasLivros);
 				escritor.close();
 				break;
 			case 2:
 				String linhaPeriodicos;
-				String novasLinhasPeriodicos="";
+				String novasLinhasPeriodicos = "";
 				while ((linhaPeriodicos = leitor.readLine()) != null) {
-					novasLinhasPeriodicos += linhaPeriodicos+"\n";
+					novasLinhasPeriodicos += linhaPeriodicos + "\n";
 				}
-				String periodicoStr="";
+				String periodicoStr = "";
 				for (String string : item) {
-					periodicoStr += ";"+string;
+					periodicoStr += ";" + string;
 				}
 				periodicoStr = periodicoStr.replaceFirst(";", "");
-				novasLinhasPeriodicos = novasLinhasPeriodicos.replace(periodicoStr, livroStr = periodicoStr.replace("true", "false"));
+				novasLinhasPeriodicos = novasLinhasPeriodicos.replace(periodicoStr,
+						livroStr = periodicoStr.replace("true", "false"));
 				leitor.close();
-				
-				escritor = new OutputStreamWriter(new FileOutputStream("csv\\PERIODICOS.csv"),"UTF-8");
+
+				escritor = new OutputStreamWriter(new FileOutputStream("csv\\PERIODICOS.csv"), "UTF-8");
 				escritor.write(novasLinhasPeriodicos);
 				escritor.close();
 				break;
@@ -273,10 +321,13 @@ public Integer buscaItem(int codigo, int tipo) {
 			@SuppressWarnings("resource")
 			BufferedReader leitor = new BufferedReader(new FileReader("csv\\ALUNOS.csv"));
 			String linha;
-			while ((linha=leitor.readLine())!=null) {
+			while ((linha = leitor.readLine()) != null) {
 				String[] aluno = linha.split(";");
-				if (aluno[0].equals(String.valueOf(matricula))&&aluno[5].equals("20")) {
+				if (aluno[0].equals(String.valueOf(matricula)) && aluno[5].equals("20")) {
 					leitor.close();
+					String[] emprestimo = buscaEmprestimo(matricula, 2).clone();
+					System.out.println("O usuario de matricula, " + matricula
+							+ ", possuí multa no valor de R$20, referente ao emprestimo, " + emprestimo[0]+".");
 					return true;
 				} else if (aluno[0].equals(String.valueOf(matricula))) {
 					leitor.close();
