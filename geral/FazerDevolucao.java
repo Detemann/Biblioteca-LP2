@@ -10,12 +10,9 @@ public class FazerDevolucao {
 		
 		String[] statusEmprestimo = auxi.buscaEmprestimo(matricula, 1);
 		if (statusEmprestimo[1].equals("0")) {
-			String[] item = auxi.buscaArcevo(statusEmprestimo[0], 0);
-			if (item[0].equals("0")) {
-				System.out.println("Emprestimo não encontrado.");
-				ProgramaMain.menuPrincipal();
-			}
-			
+			Integer[] codigoItem = auxi.buscaItem(Integer.parseInt(statusEmprestimo[0]));
+			String[] item = auxi.buscaArcevo(String.valueOf(codigoItem[0]), codigoItem[1]);
+			auxi.setDisponibilidade(item, codigoItem[1]);
 			System.out.println("FIM");
 		} else {
 			auxi.buscarMulta(matricula);
