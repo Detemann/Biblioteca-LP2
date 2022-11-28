@@ -24,7 +24,7 @@ public class FazerDevolucao {
 				leitor.readLine();
 				BufferedReader leitor2 = new BufferedReader(new FileReader("csv\\ITENS.csv"));
 				String linhaEmprestimo;
-				String linhaItem;
+				String linhaItem = null;
 				while((linhaEmprestimo = leitor.readLine()) != null) {
 					boolean passou = false;
 					String[] emprestimoInfo = linhaEmprestimo.split(";");
@@ -48,11 +48,26 @@ public class FazerDevolucao {
 				while ((linhasEmprestimo = leitor.readLine()) != null) {
 					novasLinhasEmprestimo += linhasEmprestimo+ "\n";
 				}
+				leitor.close();
 				novasLinhasEmprestimo = novasLinhasEmprestimo.replace(linhaEmprestimo, "");
 				novasLinhasEmprestimo = novasLinhasEmprestimo.replaceAll("(?m)^[ \\t]*\\r?\\n", "");
 				
 				OutputStreamWriter escritor = new OutputStreamWriter(new FileOutputStream("csv\\EMPRESTIMO.csv", false), "UTF-8");
 				escritor.write(novasLinhasEmprestimo);
+				escritor.close();
+				
+				String linhasItens;
+				String novasLinhasItens="";
+				leitor = new BufferedReader(new FileReader("csv\\ITENS.csv"));
+				while ((linhasItens = leitor.readLine()) != null) {
+					novasLinhasItens += linhasItens+ "\n";
+				}
+				novasLinhasItens = novasLinhasItens.replace(linhaItem, "");
+				novasLinhasItens = novasLinhasItens.replaceAll("(?m)^[ \\t]*\\r?\\n", "");
+				
+				
+				escritor = new OutputStreamWriter(new FileOutputStream("csv\\ITENS.csv", false), "UTF-8");
+				escritor.write(novasLinhasItens);
 				escritor.close();
 			} catch (Exception e) {
 				System.out.println("Ocorreu um erro.");
