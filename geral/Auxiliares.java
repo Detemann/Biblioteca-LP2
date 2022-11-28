@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 // Essa classe contém metodos de busca e outras coisas
 public class Auxiliares {
@@ -91,14 +92,8 @@ public class Auxiliares {
 						while ((linha = leitor.readLine()) != null) {
 							String[] livro = linha.split(";");
 							if (livro[0].equals(codigoItem)) {
-								if (livro[7].equals("true")) {
-									leitor.close();
-									return livro;
-								} else {
-									leitor.close();
-									livro[0] = "-1";
-									return livro;
-								}
+								leitor.close();
+								return livro;
 							}
 						}
 						leitor.close();
@@ -108,15 +103,9 @@ public class Auxiliares {
 						leitor = new BufferedReader(new FileReader("csv\\PERIODICOS.csv"));
 						while ((linha = leitor.readLine()) != null) {
 							String[] periodico = linha.split(";");
-							if (periodico[0].equals(codigoItem)) {
-								if (periodico[6].equals("true")) {
-									leitor.close();
-									return periodico;
-								} else {
-									leitor.close();
-									periodico[0] = "-1";
-									return periodico;
-								}
+							if (Objects.equals(periodico[0], codigoItem)) {
+								leitor.close();
+								return periodico;
 							}
 						}
 						leitor.close();
@@ -125,10 +114,8 @@ public class Auxiliares {
 						while ((linha = leitor.readLine()) != null) {
 							String[] livro = linha.split(";");
 							if (livro[0].equals(codigoItem)) {
-								if (livro[7].equals("true")) {
-									leitor.close();
-									return livro;
-								}
+								leitor.close();
+								return livro;
 							}
 						}
 						
@@ -137,10 +124,8 @@ public class Auxiliares {
 						while ((linha = leitor.readLine()) != null) {
 							String[] periodico = linha.split(";");
 							if (periodico[0].equals(codigoItem)) {
-								if (periodico[7].equals("true")) {
-									leitor.close();
-									return periodico;
-								}
+								leitor.close();
+								return periodico;
 							}
 						}
 						break;
@@ -221,7 +206,6 @@ public class Auxiliares {
 
 	public Integer[] buscaItem(int codigo) {
 
-		// 1 para livros; 2 para periódicos
 		if (codigo != 0) {
 			try {
 				BufferedReader leitor = new BufferedReader(new FileReader("csv\\ITENS.csv"));

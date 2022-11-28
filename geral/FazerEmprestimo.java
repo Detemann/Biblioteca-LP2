@@ -5,6 +5,7 @@ import java.io.OutputStreamWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 import java.util.Random;
 
 public class FazerEmprestimo {
@@ -101,8 +102,8 @@ public class FazerEmprestimo {
 				String codigoLivro = ProgramaMain.entrada.next();
 				String[] livroInfo = auxi.buscaArcevo(codigoLivro, 1);
 				item.setCodigoLivro(Integer.parseInt(livroInfo[0]));
-				if (item.getCodigoLivro()==-1) {
-					System.out.println("O livro solicitado existe mas não está disponível.");
+				if (Objects.equals(livroInfo[7], "false")) {
+					System.out.println("O livro solicitado existe, mas não está disponível.");
 				} else {
 					auxi.setDisponibilidade(livroInfo, 1);
 					passou=true;
@@ -113,8 +114,8 @@ public class FazerEmprestimo {
 				String codigoPeriodico = ProgramaMain.entrada.next();
 				String[] periodicoInfo = auxi.buscaArcevo(codigoPeriodico, 1);
 				item.setCodigoPeriodico(Integer.parseInt(periodicoInfo[0]));
-				if (item.getCodigoPeriodico()==-1) {
-					System.out.println("O periódico solicitado existe mas não está disponível.");
+				if (Objects.equals(periodicoInfo[6], "false")) {
+					System.out.println("O periódico solicitado existe, mas não está disponível.");
 				} else {
 					passou=true;
 				}
