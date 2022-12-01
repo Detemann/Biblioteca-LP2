@@ -30,7 +30,7 @@ public class FazerEmprestimo {
 				if (matricula==0) {
 					ProgramaMain.menuPrincipal();
 					break;
-				} else if (matricula == null) {
+				} else if (matricula == -1) {
 					System.out.println("Matricula não encontrada!");
 				} else if (matriculaStr.length() == 8){
 					System.out.println("Matricula encontrada!");
@@ -98,9 +98,27 @@ public class FazerEmprestimo {
 			System.out.println("[1]Livro\n[2]Periódico");
 			switch (ProgramaMain.entrada.nextInt()) {
 			case 1:
-				System.out.println("Escreva o código do livro: ");
-				String codigoLivro = ProgramaMain.entrada.next();
-				String[] livroInfo = auxi.buscaArcevo(codigoLivro, 1);
+				String codigoLivro="0";
+				String[] livroInfo = new String[6];
+				do {
+					System.out.println("Escreva o código do livro: ");
+					codigoLivro = ProgramaMain.entrada.next();
+					if (codigoLivro.equals("0") || codigoLivro.length() < 8 || codigoLivro.length() > 8) {
+						System.out.println("Código está errado.");
+						codigoLivro = "0";
+					} else {
+						livroInfo = auxi.buscaArcevo(codigoLivro, 1);
+						
+						if (Objects.equals(livroInfo[0], "0")) {
+							System.out.println("Código não encontrado.");
+						} else {
+							livroInfo = auxi.buscaArcevo(codigoLivro, 1);
+							break;
+						}
+					}
+					
+				} while (true);
+				
 				item.setCodigoLivro(Integer.parseInt(livroInfo[0]));
 				if (Objects.equals(livroInfo[7], "false")) {
 					System.out.println("O livro solicitado existe, mas não está disponível.");
@@ -110,9 +128,20 @@ public class FazerEmprestimo {
 				}
 				break;
 			case 2:
-				System.out.println("Escreva o código do periódico: ");
-				String codigoPeriodico = ProgramaMain.entrada.next();
-				String[] periodicoInfo = auxi.buscaArcevo(codigoPeriodico, 1);
+				String codigoPeriodico="0";
+				String[] periodicoInfo = new String[6];
+				do {
+					System.out.println("Escreva o código do livro: ");
+					codigoLivro = ProgramaMain.entrada.next();
+					if (codigoPeriodico.equals("0") && codigoPeriodico.length() < 8 && codigoPeriodico.length() > 8) {
+						System.out.println("Periodico não encontrado ou código está errado.");
+					} else {
+						periodicoInfo = auxi.buscaArcevo(codigoPeriodico, 2);
+						break;
+					}
+				} while (codigoPeriodico.equals("0"));
+				
+				 
 				item.setCodigoPeriodico(Integer.parseInt(periodicoInfo[0]));
 				if (Objects.equals(periodicoInfo[6], "false")) {
 					System.out.println("O periódico solicitado existe, mas não está disponível.");

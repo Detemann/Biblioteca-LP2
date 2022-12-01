@@ -9,9 +9,15 @@ public class FazerDevolucao {
 	Auxiliares auxi = new Auxiliares();
 	
 	public void devolucao() {
-		System.out.println("------ Devoluções ------\n");
-		System.out.println("Digite a matricula do aluno, professor ou funcionário: ");
-		int matricula = auxi.buscaMatricula(ProgramaMain.entrada.next(), 0);
+		int matricula = -1;
+		do {
+			System.out.println("------ Devoluções ------\n");
+			System.out.println("Digite a matrícula do aluno, professor ou funcionário: ");
+			matricula = auxi.buscaMatricula(ProgramaMain.entrada.next(), 0);
+			if (matricula == -1) {
+				System.out.println("Matrícula não encontrada.\nTente novamente.");
+			}
+		} while (matricula == -1);
 		
 		String[] statusEmprestimo = auxi.buscaEmprestimo(matricula, 1);
 		if (statusEmprestimo[1].equals("0")) {

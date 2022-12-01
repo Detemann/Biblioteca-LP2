@@ -72,7 +72,7 @@ public class Auxiliares {
 		} else
 			return 0;
 
-		return null;
+		return -1;
 	}
 
 	public String[] buscaArcevo(String codigoItem, int tipo) {
@@ -141,6 +141,7 @@ public class Auxiliares {
 			}
 		} else
 			return null;
+		
 		String[] resultado = {"0"};
 		return resultado;
 	}
@@ -325,7 +326,6 @@ public class Auxiliares {
 			System.out.println("Ocorreu um erro.");
 			e.printStackTrace();
 		}
-		System.out.println("Aluno/Multa não encontrado.");
 		return false;
 	}
 }
