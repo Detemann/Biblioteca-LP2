@@ -17,6 +17,7 @@ public class ProgramaMain {
 		String matricula;
 		String senha;
 		String linha;
+		boolean passou = false;
 		try (BufferedReader leitor = new BufferedReader(new FileReader("csv\\FUNCIONARIOS.csv"))) {
 			linha = leitor.readLine();
 			while (true) {
@@ -29,7 +30,12 @@ public class ProgramaMain {
 					if (funcionario[6].equals(matricula) && funcionario[5].equals(senha)) {
 						leitor.close();
 						menuPrincipal();
+						passou = true;
+						break;
 					}
+				}
+				if (passou == true) {
+					break;
 				}
 				System.out.println("login ou senha inválido");
 			}
