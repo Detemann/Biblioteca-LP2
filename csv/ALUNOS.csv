@@ -1,24 +1,24 @@
 matrIcula;nome;endereco;curso;data-ingresso;multa
-92309230;Amanda Antonia Ester das Neves;Rua 13 de maio,17, Centro, Vitória-ES;Sistemas de Informacao;04/10/2018;0
-82588258;Manuela Tatiane Elaine Farias;Escadaria do Fruta Pão, 20, Santos Reis, Vitória-ES;Engenharia da computacao;07/07/2020;20
-31233123;Sara Olivia Pinto;Rua Manoel Francisco Ribeiro, 225, Consolação, Vitória-ES;analise e desenvolvimento de sistemas;16/06/2020;0
-62476247;Yago Caio Carvalho;Praça Orlando Simões da Silva, 15, Maruípe, Vitória-ES;ciencia da computacao;11/08/2018;0
-12891289;Mario Ruan Rezende;Rua Fortunato Abreu Gagno, 33, Jardim Camburi, Vitória-ES;Engenharia da computacao;31/12/2018;0
-82628262;Marcelo Thiago Rodrigo Cavalcanti;Rua Antônio Salomão Filho, 549, Joana D'arc, Vitória-ES;analise e desenvolvimento de sistemas;14/12/2020;0
-65906590;Maria Isabela Eloa Barbosa;Escadaria Caparaó, 99, Gurigica, Vitória-ES;Engenharia da computacao;23/01/2020;0
-71107110;Pedro Pedro Noah Silva;Rua Raul de Carvalho, 290, Resistência, Vitória-ES;Sistemas de Informacao;14/05/2018;0
-92369236;Agatha Regina Laura Lima;Avenida Nossa Senhora da Penha, 526, Praia do Canto, Vitória-ES;analise e desenvolvimento de sistemas;22/07/2018;0
-27862786;Milena Fatima Maita Fernandes;Rua Fenelon Gomes, 88, Ilha do Príncipe, Vitória-ES;analise e desenvolvimento de sistemas;01/09/2018;0
-56575657;Geraldo Martin Ian Rodrigues;Rua do Cajueiro, 29, Balneário de Carapebus, Serra-ES;Engenharia da computacao;14/04/2018;0
-71497149;Simone Melissa Sonia Viana;Rua Contagem, 9, Jardim Carapina, Serra-ES;Sistemas de Informacao;26/03/2019;0
-77467746;Nelson Kaique Bento Campos;Rua Pequiá, 15, Laranjeiras Velha, Serra-ES;analise e desenvolvimento de sistemas;21/09/2019;0
-14641464;Leticia Vera Aparecida da Costa;Rua Parati, 45, Morada de Laranjeiras, Serra-ES;analise e desenvolvimento de sistemas;21/02/2020;0
-71587158;Julia Alana Ana Cardoso;Alameda Capuba, 2, Alphaville Jacuhy, Serra-ES;Engenharia da computacao;13/02/2020;0
-63346334;Luan Lucas Aragao;Rua Manoel da Silva, 455, Tabuazeiro, Vitória-ES;Sistemas de Informacao;05/04/2019;0
-35443544;Regina Sueli Ramos;Avenida Nossa Senhora da Penha, 714, Praia do Canto, Vitória-ES;analise e desenvolvimento de sistemas;06/02/2020;0
-95009500;Emilly Hadassa Clara Ribeiro;Rua Benedito Muniz, 72, Santa Martha, Vitória-ES;Engenharia da computacao;21/06/2020;0
-54675467;Jennifer Bianca da Cunha;Rua Pedro Suaid, 59, Jardim Camburi, Vitória-ES;Sistemas de Informacao;13/03/2018;0
-13821382;Lucas Detemann Pirola;Rua Mantega, 11;Letras;01/20/2022;0
+92309230;Amanda Antonia Ester das Neves;Rua 13 de maio,17, Centro, Vitória-ES;Sistemas de Informacao;04/10/2018;0.0
+82588258;Manuela Tatiane Elaine Farias;Escadaria do Fruta Pão, 20, Santos Reis, Vitória-ES;Engenharia da computacao;07/07/2020;0.0
+31233123;Sara Olivia Pinto;Rua Manoel Francisco Ribeiro, 225, Consolação, Vitória-ES;analise e desenvolvimento de sistemas;16/06/2020;0.0
+62476247;Yago Caio Carvalho;Praça Orlando Simões da Silva, 15, Maruípe, Vitória-ES;ciencia da computacao;11/08/2018;0.0
+12891289;Mario Ruan Rezende;Rua Fortunato Abreu Gagno, 33, Jardim Camburi, Vitória-ES;Engenharia da computacao;31/12/2018;0.0
+82628262;Marcelo Thiago Rodrigo Cavalcanti;Rua Antônio Salomão Filho, 549, Joana D'arc, Vitória-ES;analise e desenvolvimento de sistemas;14/12/2020;0.0
+65906590;Maria Isabela Eloa Barbosa;Escadaria Caparaó, 99, Gurigica, Vitória-ES;Engenharia da computacao;23/01/2020;0.0
+71107110;Pedro Pedro Noah Silva;Rua Raul de Carvalho, 290, Resistência, Vitória-ES;Sistemas de Informacao;14/05/2018;0.0
+92369236;Agatha Regina Laura Lima;Avenida Nossa Senhora da Penha, 526, Praia do Canto, Vitória-ES;analise e desenvolvimento de sistemas;22/07/2018;0.0
+27862786;Milena Fatima Maita Fernandes;Rua Fenelon Gomes, 88, Ilha do Príncipe, Vitória-ES;analise e desenvolvimento de sistemas;01/09/2018;0.0
+56575657;Geraldo Martin Ian Rodrigues;Rua do Cajueiro, 29, Balneário de Carapebus, Serra-ES;Engenharia da computacao;14/04/2018;0.0
+71497149;Simone Melissa Sonia Viana;Rua Contagem, 9, Jardim Carapina, Serra-ES;Sistemas de Informacao;26/03/2019;0.0
+77467746;Nelson Kaique Bento Campos;Rua Pequiá, 15, Laranjeiras Velha, Serra-ES;analise e desenvolvimento de sistemas;21/09/2019;0.0
+14641464;Leticia Vera Aparecida da Costa;Rua Parati, 45, Morada de Laranjeiras, Serra-ES;analise e desenvolvimento de sistemas;21/02/2020;0.0
+71587158;Julia Alana Ana Cardoso;Alameda Capuba, 2, Alphaville Jacuhy, Serra-ES;Engenharia da computacao;13/02/2020;0.0
+63346334;Luan Lucas Aragao;Rua Manoel da Silva, 455, Tabuazeiro, Vitória-ES;Sistemas de Informacao;05/04/2019;0.0
+35443544;Regina Sueli Ramos;Avenida Nossa Senhora da Penha, 714, Praia do Canto, Vitória-ES;analise e desenvolvimento de sistemas;06/02/2020;0.0
+95009500;Emilly Hadassa Clara Ribeiro;Rua Benedito Muniz, 72, Santa Martha, Vitória-ES;Engenharia da computacao;21/06/2020;0.0
+54675467;Jennifer Bianca da Cunha;Rua Pedro Suaid, 59, Jardim Camburi, Vitória-ES;Sistemas de Informacao;13/03/2018;0.0
+13821382;Lucas Detemann Pirola;Rua Mantega, 11;Letras;01/20/2022;0.0
 53453452;Leandro;av.lion;Sistema;21/08/2018;0.0
 91283011;Gabriel;av.bilau;sistema;de;0.0
 29834755;Rodrigo;Av.piruzinho;Sitemas;30/05/12;0.0
